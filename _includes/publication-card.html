@@ -1,0 +1,39 @@
+<div class="pub-entry">
+  {% if include.pub.image %}
+  <img src="{{ '/assets/images/publications/' | append: include.pub.image | relative_url }}"
+       alt="{{ include.pub.title }}"
+       class="pub-thumb">
+  {% endif %}
+  <div class="pub-body">
+    <div class="pub-title">
+      {% if include.pub.url %}
+      <a href="{{ include.pub.url }}" target="_blank" rel="noopener">{{ include.pub.title }}</a>
+      {% elsif include.pub.doi %}
+      <a href="https://doi.org/{{ include.pub.doi }}" target="_blank" rel="noopener">{{ include.pub.title }}</a>
+      {% else %}
+      {{ include.pub.title }}
+      {% endif %}
+    </div>
+    {% if include.pub.authors and include.pub.authors != "" %}
+    <div class="pub-authors">{{ include.pub.authors }}</div>
+    {% endif %}
+    <div class="pub-venue">
+      {% if include.pub.journal and include.pub.journal != "" %}{{ include.pub.journal }}{% endif %}
+      {% if include.pub.year %} &middot; {{ include.pub.year }}{% endif %}
+      {% if include.pub.preprint %} &middot; <span class="tag">preprint</span>{% endif %}
+    </div>
+    {% unless include.hide_abstract %}
+    {% if include.pub.abstract and include.pub.abstract != "" %}
+    <div class="pub-abstract">{{ include.pub.abstract }}</div>
+    {% endif %}
+    {% endunless %}
+    <div class="pub-links">
+      {% if include.pub.doi %}
+      <a href="https://doi.org/{{ include.pub.doi }}" target="_blank" rel="noopener" class="btn">DOI &rarr;</a>
+      {% endif %}
+      {% if include.pub.arxiv_id %}
+      <a href="https://arxiv.org/abs/{{ include.pub.arxiv_id }}" target="_blank" rel="noopener" class="btn">arXiv &rarr;</a>
+      {% endif %}
+    </div>
+  </div>
+</div>

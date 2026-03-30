@@ -1,0 +1,41 @@
+title: "Kreitz Research Group"
+description: "Computational Chemistry Research at Georgia Institute of Technology"
+baseurl: ""
+url: "https://kreitz-group.github.io"
+
+remote_theme: pages-themes/minimal@v0.2.0
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-seo-tag
+
+markdown: kramdown
+permalink: pretty
+
+# -------------------------------------------------------
+# PI / Sidebar Information — update these fields
+# -------------------------------------------------------
+pi:
+  name: "Dr.-Ing. Bjarne Kreitz"                     # update: full name
+  title: "Assistant Professor"              # update: your title
+  institution: "Georgia Institute of Technology"
+  department: "School of Chemical & Biomolecular Engineering"
+  photo: "kreitz.jpg"                       # place headshot in assets/images/
+  email: "bkreitz3@gatech.edu"                                 # update: your email
+  github: "https://github.com/kreitz-group"                                # update: GitHub profile URL
+  google_scholar: "https://scholar.google.com/citations?user=yuUYl_EAAAAJ&hl=en&oi=ao"                        # update: Google Scholar profile URL
+  orcid: "0000-0003-0158-9147"                                 # update: your ORCID (for scripts)
+
+# -------------------------------------------------------
+# Build settings
+# -------------------------------------------------------
+exclude:
+  - example-website/
+  - scripts/
+  - Gemfile
+  - README.md
+  - vendor/
+  - .git/
+  - "*.py"
+  - ".venv/"

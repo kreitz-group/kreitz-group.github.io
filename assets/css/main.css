@@ -1,0 +1,525 @@
+/* ==========================================================
+   Kreitz Research Group — main.css
+   Design adapted from niemeyer-research-group.github.io
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   CSS variables (light mode)
+   ---------------------------------------------------------- */
+:root {
+  --sidebar-width: 15em;
+  --content-max-width: 40em;
+  --font-small: 12pt;
+  --font-body: 14pt;
+  --font-h1: 20pt;
+
+  --bg:         #ffffff;
+  --text:       #000000;
+  --link:       #0000b8;
+  --muted:      #555555;
+  --border:     #e8e8e8;
+  --hover-bg:   #f5f5f5;
+  --tag-bg:     #eaeaff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:       #000000;
+    --text:     #fefefe;
+    --link:     #a2a2ff;
+    --muted:    #aaaaaa;
+    --border:   #323232;
+    --hover-bg: #1a1a1a;
+    --tag-bg:   #23235a;
+  }
+}
+
+/* ----------------------------------------------------------
+   Reset & base
+   ---------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 300;
+  font-size: var(--font-body);
+  line-height: 1.5em;
+  color: var(--text);
+  background: var(--bg);
+  max-width: 80em;
+  margin: 0 auto;
+}
+
+/* ----------------------------------------------------------
+   Typography
+   ---------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  line-height: 1.35em;
+}
+
+h1 { font-size: var(--font-h1); margin-bottom: 0.75em; }
+h2 { font-size: calc(var(--font-h1) - 3pt); margin-top: 2em; margin-bottom: 0.5em; padding-bottom: 0.25em; border-bottom: 1px solid var(--border); }
+h3 { font-size: calc(var(--font-h1) - 6pt); margin-top: 1.5em; margin-bottom: 0.25em; }
+h4 { font-size: calc(var(--font-h1) - 9pt); margin-top: 1em; }
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+p { margin-bottom: 1em; }
+
+ul, ol {
+  margin-left: 1.5em;
+  margin-bottom: 1em;
+}
+li { margin-bottom: 0.25em; }
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2em 0;
+}
+
+blockquote {
+  border-left: 3px solid var(--border);
+  padding-left: 1em;
+  color: var(--muted);
+  font-style: italic;
+  margin: 1em 0;
+}
+
+code {
+  font-family: monospace;
+  font-size: var(--font-small);
+  background: var(--hover-bg);
+  padding: 0.1em 0.3em;
+  border-radius: 0.2em;
+}
+
+pre {
+  background: var(--hover-bg);
+  padding: 1em;
+  border-radius: 0.25em;
+  overflow-x: auto;
+  margin-bottom: 1em;
+  font-size: var(--font-small);
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+/* ----------------------------------------------------------
+   Page layout: sidebar + content
+   ---------------------------------------------------------- */
+.page {
+  display: flex;
+  flex-direction: row;
+  padding: 3em;
+  gap: 3em;
+  align-items: flex-start;
+}
+
+/* ----------------------------------------------------------
+   Sidebar
+   ---------------------------------------------------------- */
+.sidebar {
+  flex: 0 0 var(--sidebar-width);
+  position: sticky;
+  top: 1em;
+  align-self: flex-start;
+}
+
+.profile-photo {
+  width: 100%;
+  max-width: 10em;
+  border-radius: 0.25em;
+  margin-bottom: 0.75em;
+  display: block;
+}
+
+.profile-placeholder {
+  width: 8em;
+  height: 8em;
+  background: var(--hover-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3em;
+  border-radius: 0.25em;
+  margin-bottom: 0.75em;
+  color: var(--muted);
+}
+
+.sidebar-name {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 17pt;
+  line-height: 1.3em;
+  margin-bottom: 0.3em;
+}
+
+.sidebar-meta {
+  font-size: var(--font-small);
+  color: var(--muted);
+  line-height: 1.4em;
+}
+
+.sidebar-nav {
+  margin-top: 1.25em;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.sidebar-nav a {
+  display: block;
+  padding: 0.2em 0.5em;
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 0.25em;
+  font-size: var(--font-body);
+}
+
+.sidebar-nav a:hover {
+  background: var(--hover-bg);
+  text-decoration: none;
+}
+
+.sidebar-nav a.active {
+  font-weight: 600;
+}
+
+.sidebar-links {
+  margin-top: 1em;
+  display: flex;
+  gap: 0.75em;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.sidebar-icon {
+  font-size: 1.1em;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.sidebar-icon:hover {
+  color: var(--link);
+  text-decoration: none;
+}
+
+/* ----------------------------------------------------------
+   Main content
+   ---------------------------------------------------------- */
+.content {
+  flex: 1;
+  max-width: var(--content-max-width);
+  margin-top: 10em;
+  min-width: 0;
+}
+
+/* ----------------------------------------------------------
+   People page
+   ---------------------------------------------------------- */
+
+/* PI card */
+.pi-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin: 1.5em 0 2em;
+}
+
+@media (min-width: 500px) {
+  .pi-card {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.pi-card img {
+  width: 10em;
+  height: auto;
+  border-radius: 0.25em;
+  flex-shrink: 0;
+}
+
+.pi-card-info h3 {
+  margin-top: 0;
+}
+
+/* Person grid for current members */
+.person-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+  margin: 1em 0;
+}
+
+.person-card {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  padding: 0.75em;
+  border: 1px solid var(--border);
+  border-radius: 0.25em;
+}
+
+.person-card img {
+  width: 5.5em;
+  height: 5.5em;
+  object-fit: cover;
+  border-radius: 0.25em;
+  flex-shrink: 0;
+}
+
+.person-photo-placeholder {
+  width: 5.5em;
+  height: 5.5em;
+  background: var(--hover-bg);
+  border-radius: 0.25em;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  color: var(--muted);
+}
+
+.person-info {
+  flex: 1;
+}
+
+.person-info h3 {
+  margin: 0 0 0.1em;
+  font-size: 14pt;
+}
+
+.person-role {
+  font-size: var(--font-small);
+  color: var(--muted);
+  margin-bottom: 0.2em;
+  font-weight: 600;
+}
+
+.person-meta {
+  font-size: var(--font-small);
+  color: var(--muted);
+  margin-bottom: 0.15em;
+}
+
+.person-tag-links {
+  display: flex;
+  gap: 0.4em;
+  flex-wrap: wrap;
+  margin-top: 0.5em;
+}
+
+/* Alumni grid */
+.alumni-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13em, 1fr));
+  gap: 0.75em;
+  margin: 1em 0;
+}
+
+.alumni-card {
+  padding: 0.75em;
+  border: 1px solid var(--border);
+  border-radius: 0.25em;
+}
+
+.alumni-card h4 {
+  margin: 0 0 0.1em;
+  font-size: 13pt;
+}
+
+/* ----------------------------------------------------------
+   Publications page
+   ---------------------------------------------------------- */
+.pub-list {
+  margin: 1em 0;
+}
+
+.pub-entry {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid var(--border);
+}
+
+.pub-entry:last-child {
+  border-bottom: none;
+}
+
+.pub-thumb {
+  width: 12em;
+  height: 12em;
+  object-fit: cover;
+  border-radius: 0.25em;
+  flex-shrink: 0;
+}
+
+.pub-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.pub-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 13pt;
+  line-height: 1.35em;
+  margin-bottom: 0.2em;
+}
+
+.pub-title a {
+  color: var(--text);
+}
+
+.pub-title a:hover {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.pub-authors {
+  font-size: var(--font-small);
+  color: var(--muted);
+  margin-bottom: 0.15em;
+}
+
+.pub-venue {
+  font-size: var(--font-small);
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 0.3em;
+}
+
+.pub-abstract {
+  font-size: var(--font-small);
+  color: var(--muted);
+  margin-bottom: 0.4em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.pub-links {
+  display: flex;
+  gap: 0.4em;
+  flex-wrap: wrap;
+  margin-top: 0.4em;
+}
+
+/* ----------------------------------------------------------
+   Tools / repos page
+   ---------------------------------------------------------- */
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1em;
+  margin: 1em 0;
+}
+
+.repo-card {
+  padding: 1em;
+  border: 1px solid var(--border);
+  border-radius: 0.25em;
+}
+
+.repo-card h3 {
+  margin: 0 0 0.3em;
+  font-size: 14pt;
+}
+
+.repo-card p {
+  font-size: var(--font-small);
+  color: var(--muted);
+  margin-bottom: 0.5em;
+}
+
+/* ----------------------------------------------------------
+   Shared tag / pill style
+   ---------------------------------------------------------- */
+.tag {
+  display: inline-block;
+  font-size: 11pt;
+  padding: 0.1em 0.5em;
+  border-radius: 0.25em;
+  background: var(--tag-bg);
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.tag:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.btn {
+  display: inline-block;
+  font-size: 11pt;
+  padding: 0.15em 0.6em;
+  border-radius: 0.25em;
+  border: 1px solid var(--muted);
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background: var(--hover-bg);
+  text-decoration: none;
+}
+
+/* ----------------------------------------------------------
+   Responsive
+   ---------------------------------------------------------- */
+@media (max-width: 800px) {
+  .page {
+    flex-direction: column;
+    padding: 1.25em;
+    gap: 1.5em;
+  }
+
+  .sidebar {
+    position: static;
+    flex: none;
+    width: 100%;
+  }
+
+  .profile-photo {
+    max-width: 7em;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.25em;
+  }
+
+  .sidebar-nav a {
+    padding: 0.2em 0.6em;
+    border: 1px solid var(--border);
+  }
+
+  .content {
+    margin-top: 0;
+    max-width: 100%;
+  }
+}

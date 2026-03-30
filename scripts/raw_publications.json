@@ -1,0 +1,574 @@
+{
+  "papers": [
+    {
+      "title": "Prospects for using artificial intelligence to understand intrinsic kinetics of heterogeneous catalytic reactions",
+      "doi": "10.1016/j.coche.2026.101232",
+      "authors_list": [],
+      "year": null,
+      "journal": "",
+      "abstract": "",
+      "source": "orcid_fallback",
+      "s2_id": null,
+      "arxiv_id": null
+    },
+    {
+      "title": "Structure-dependent microkinetic modeling of the CO2 desorption with surface diffusion",
+      "authors_list": [
+        "Bjarne Kreitz",
+        "Gandhali Kogekar",
+        "Raffaele Cheula",
+        "Franklin Goldsmith"
+      ],
+      "year": 2025,
+      "doi": "10.1016/j.jcat.2025.116407",
+      "arxiv_id": null,
+      "journal": "Journal of Catalysis",
+      "abstract": "The interaction of CO 2 with Ni catalysts is important for many industrial processes like methanation, which is known to be structure sensitive. Consequently, structure-dependent multiscale modeling is required to accurately capture the interaction of CO 2 with the various Ni facets and to provide accurate atomistic insights. While mean-field multiscale models can be constructed that account for multiple active facets, almost all of these studies neglect the diffusion of adsorbates between the facets. In this study, we close the gap by extending the open-source Cantera toolkit with capabilities for surface diffusion in mean-field microkinetic models, making it the first widely adopted software tool that includes these features. We developed a thermodynamically consistent microkinetic model for a Ni nanoparticle consisting of Ni(111), Ni(100), Ni(211),",
+      "source": "semantic_scholar",
+      "s2_id": "f64fc782c296a7475d185d93e3ef5f8545d7fed9"
+    },
+    {
+      "title": "Structure-Dependent Microkinetic Modeling of the CO2 Desorption with Surface Diffusion",
+      "doi": "10.26434/chemrxiv-2025-l7135",
+      "authors_list": [],
+      "year": null,
+      "journal": "",
+      "abstract": "",
+      "source": "orcid_fallback",
+      "s2_id": null,
+      "arxiv_id": null
+    },
+    {
+      "title": "NaWuReT Colloquium: Veni, Vidi, Vici? Visionary Leaders in Chemical Reaction Engineering",
+      "authors_list": [
+        "Nils Kurig",
+        "Bjarne Kreitz",
+        "Emanuele Moioli",
+        "M. B\u00f6rnhorst",
+        "Jens Friedland"
+      ],
+      "year": 2025,
+      "doi": "10.1002/cite.202500029",
+      "arxiv_id": null,
+      "journal": "Chemie Ingenieur Technik",
+      "abstract": "The Nachwuchs Reaktionstechnik (NaWuReT) is an organization of early\u2010career chemical engineers in the DECHEMA/VDI subject division Reaction Engineering. In the spring of 2024, the annual colloquium was held as a series of online lectures featuring five distinguished late\u2010career academics and experts from industry. The speakers shared insights into how they transformed their efforts and ideas into successful careers in academia and industry. Additionally, they provided valuable recommendations for early\u2010career chemical engineers, offering a critical resource for professional development in the field.",
+      "source": "semantic_scholar",
+      "s2_id": "398e9bb99e57ff3baa6bca2b6f972c7f6378a03e"
+    },
+    {
+      "title": "Influence of Coverage Dependence on the Thermophysical Properties of Adsorbates and Its Impact on Microkinetic Models",
+      "authors_list": [
+        "J. Bae",
+        "Bjarne Kreitz",
+        "Andrew A. Peterson",
+        "C. F. Goldsmith"
+      ],
+      "year": 2025,
+      "doi": "10.1021/acs.jcim.4c02167",
+      "arxiv_id": null,
+      "journal": "Journal of chemical information and modeling",
+      "abstract": "This work focuses on the impact of lateral interactions on the thermophysical properties of adsorbates. We present different parametrizations for coverage-dependent enthalpy, entropy, and heat capacity in a mean-field microkinetic model. These models are tested against two systems, CO/Pt(111) and CO/Co(0001), using two different functionals. A detailed investigation into how coverage influences the thermophysical properties of CO* is presented. We place particular emphasis on studying the impact of coverage on the vibrational partition function and how this affects the entropy of adsorbates. Higher coverages typically lead to increased repulsive interactions, which should further constrain the large amplitude modes that contribute the most to the vibrational entropy. In some cases, however, the opposite effect occurred; the vibrational entropy actually increased because surface crowding forced adsorbates to different binding locations that had lower frequencies. Our results highlighted cases where coverage-dependent entropy should be included, such as for adsorbates with lateral vibrational modes and systems at high temperatures. These methods for including coverage-dependent properties into mean-field microkinetics in a thermodynamically consistent way are now available in the open-source software Cantera.",
+      "source": "semantic_scholar",
+      "s2_id": "37520be99ffd1a11391b3df25e7fb34cac6d24ab"
+    },
+    {
+      "title": "Multilevel on-the-fly sparse grids for coupling coarse-grained and high fidelity models in heterogeneous catalysis",
+      "authors_list": [
+        "Tobias H\u00fclser",
+        "Bjarne Kreitz",
+        "C. F. Goldsmith",
+        "Sebastian Matera"
+      ],
+      "year": 2024,
+      "doi": "10.1016/j.compchemeng.2024.108922",
+      "arxiv_id": null,
+      "journal": "Comput. Chem. Eng.",
+      "abstract": "",
+      "source": "semantic_scholar",
+      "s2_id": "b6198fcf554fef0528055b53b268692a57e2098a"
+    },
+    {
+      "title": "Unifying thermochemistry concepts in computational heterogeneous catalysis.",
+      "authors_list": [
+        "Bjarne Kreitz",
+        "G. S. Gusma\u0303o",
+        "Dingqi Nai",
+        "S. Sahoo",
+        "Andrew A. Peterson",
+        "David H. Bross",
+        "C. F. Goldsmith",
+        "Andrew J. Medford"
+      ],
+      "year": 2024,
+      "doi": "10.1039/d4cs00768a",
+      "arxiv_id": null,
+      "journal": "Chemical Society reviews",
+      "abstract": "Thermophysical properties of adsorbates and gas-phase species define the free energy landscape of heterogeneously catalyzed processes and are pivotal for an atomistic understanding of the catalyst performance. These thermophysical properties, such as the free energy or the enthalpy, are typically derived from density functional theory (DFT) calculations. Enthalpies are species-interdependent properties that are only meaningful when referenced to other species. The widespread use of DFT has led to a proliferation of new energetic data in the literature and databases. However, there is a lack of consistency in how DFT data is referenced and how the associated enthalpies or free energies are stored and reported, leading to challenges in reproducing or utilizing the results of prior work. Additionally, DFT suffers from exchange-correlation errors that often require corrections to align the data with other global thermochemical networks, which are not always clearly documented or explained. In this review, we introduce a set of consistent terminology and definitions, review existing approaches, and unify the techniques using the framework of linear algebra. This set of terminology and tools facilitates the correction and alignment of energies between different data formats and sources, promoting the sharing and reuse of ab initio data. Standardization of thermochemistry concepts in computational heterogeneous catalysis reduces computational cost and enhances fundamental understanding of catalytic processes, which will accelerate the computational design of optimally performing catalysts.",
+      "source": "semantic_scholar",
+      "s2_id": "11ea26eb4499d9d61613633b0ec185d0a94f030f"
+    },
+    {
+      "title": "Influence of coverage dependence on the thermophysical properties of adsorbates and its impact on microkinetic models",
+      "doi": "10.26434/chemrxiv-2024-pn13j",
+      "authors_list": [],
+      "year": null,
+      "journal": "",
+      "abstract": "",
+      "source": "orcid_fallback",
+      "s2_id": null,
+      "arxiv_id": null
+    },
+    {
+      "title": "Spray\u2010dried Ni\u2010Co Bimetallic Catalysts for Dry Reforming of Methane",
+      "authors_list": [
+        "Gerrit K\u00fcchen",
+        "Vinzent Olszok",
+        "Bjarne Kreitz",
+        "C. Mahr",
+        "A. Rosenauer",
+        "T. Turek",
+        "Alfred P. Weber",
+        "G. Wehinger"
+      ],
+      "year": 2024,
+      "doi": "10.1002/cctc.202400371",
+      "arxiv_id": null,
+      "journal": "ChemCatChem",
+      "abstract": "Dry reforming of methane (DRM) is an attractive reaction for synthesis gas production, since it converts two greenhouse gases into valuable chemical feedstock. Silica supported bimetallic catalysts with constant metal loading but varying Ni/Co ratios (xNi=1, 0.8, 0.6, 0.5, 0.4, 0.2, 0) were produced via spray\u2010drying for the application in DRM, aiming at the identification of compositions with superior activity. In this study, building block particles refer to an inert framework, supporting the catalyst. The elemental distribution of Si, Ni, and Co within such building block particles was evaluated using scanning transmission electron microscopy. Additionally, X\u2010ray diffraction and temperature\u2010programmed reduction experiments confirmed that Ni and Co initially exist in an oxidic state within the SiO2 framework after production and later transform into an alloyed metallic state upon reduction with hydrogen, as confirmed by X\u2010ray photoelectron spectroscopy. A systematic comparison of the activity over a temperature range (323\u20131150\u2005K) was performed using temperature scanning measurements. The highest intrinsic activity was found with the bimetallic Ni40Co60 particles.",
+      "source": "semantic_scholar",
+      "s2_id": "55ae134d3861d13a9dcdd2a45b8078e6d31db279"
+    },
+    {
+      "title": "Unifying thermochemistry concepts in computational heterogeneous catalysis",
+      "doi": "10.26434/chemrxiv-2024-fjfmd",
+      "authors_list": [],
+      "year": null,
+      "journal": "",
+      "abstract": "",
+      "source": "orcid_fallback",
+      "s2_id": null,
+      "arxiv_id": null
+    },
+    {
+      "title": "NaWuReT Colloquium: Career Pathways and Opportunities for Reaction Engineers in Industry",
+      "authors_list": [
+        "Bjarne Kreitz",
+        "M. B\u00f6rnhorst",
+        "Jens Friedland",
+        "E. Moioli"
+      ],
+      "year": 2024,
+      "doi": "10.1002/cite.202300182",
+      "arxiv_id": null,
+      "journal": "Chemie Ingenieur Technik",
+      "abstract": "The Nachwuchs Reaktionstechnik (NaWuReT) is an organization of early\u2010career chemical engineers of the DECHEMA/VDI subject division Reaction Engineering. In the spring of 2023, we organized a series of online lectures involving five invited speakers from industry to shed light on different career opportunities. The speakers gave insights into their individual career pathways and presented their current projects, both of which sparked active discussions among speakers and attendees.",
+      "source": "semantic_scholar",
+      "s2_id": "8b2c9a6c7995e88efbfc3d18888545bebb8ad8f1"
+    },
+    {
+      "title": "Automatic Mechanism Generation Involving Kinetics of Surface Reactions with Bidentate Adsorbates",
+      "authors_list": [
+        "Bjarne Kreitz",
+        "Katr\u00edn Bl\u00f6ndal",
+        "Kirk Badger",
+        "Richard H. West",
+        "C. F. Goldsmith"
+      ],
+      "year": 2024,
+      "doi": "10.1039/d3dd00184a",
+      "arxiv_id": null,
+      "journal": "Digital Discovery",
+      "abstract": "The open-source Reaction Mechanism Generator (RMG) has been enhanced with new features to handle multidentate adsorbates. New reaction families have been added based upon ab initio data from 26 reactions...",
+      "source": "semantic_scholar",
+      "s2_id": "fd0d65af4f4956ee3469a7f389ed963cf76bf124"
+    },
+    {
+      "title": "Automated Generation of Microkinetics for Heterogeneously Catalyzed Reactions Considering Correlated Uncertainties.",
+      "authors_list": [
+        "Bjarne Kreitz",
+        "Patrick Lott",
+        "A. Medford",
+        "F. Studt",
+        "O. Deutschmann",
+        "Franklin Goldsmith",
+        "Prof. C. F. Goldsmith",
+        "Prof. F. Studt",
+        "Prof. O. Deutschmann",
+        "Prof. A. J. Medford"
+      ],
+      "year": 2023,
+      "doi": "10.1002/anie.202306514",
+      "arxiv_id": null,
+      "journal": "Angewandte Chemie",
+      "abstract": "The study presents an ab-initio based framework for the automated construction of microkinetic mechanisms considering correlated uncertainties in all energetic parameters and estimation routines. 2000 unique microkinetic models were generated within the uncertainty space of the BEEF-vdW functional for the oxidation reactions of representative exhaust gas emissions from stoichiometric combustion engines over Pt(111) and compared to experiments through multiscale modeling. The ensemble of simulations stresses the importance of considering uncertainties. Within this set of first-principles-based models, it is possible to identify a microkinetic mechanism that agrees with experimental data. This mechanism can be traced back to a single exchange-correlation functional, and it suggests that Pt(111) could be the active site for the oxidation of light hydrocarbons. The study provides a universal framework for the automated construction of reaction mechanisms with correlated uncertainty quantification, enabling a DFT-constrained microkinetic model optimization for other heterogeneously catalyzed systems.",
+      "source": "semantic_scholar",
+      "s2_id": "88e1154695fd698237820159111befb1d8571d43"
+    },
+    {
+      "title": "Automatisierte Generierung von Mikrokinetiken f\u00fcr heterogen katalysierte Reaktionen unter Ber\u00fccksichtigung korrelierter Unsicherheiten**",
+      "doi": "10.1002/ange.202306514",
+      "authors_list": [],
+      "year": null,
+      "journal": "",
+      "abstract": "",
+      "source": "orcid_fallback",
+      "s2_id": null,
+      "arxiv_id": null
+    },
+    {
+      "title": "Automatic Mechanism Generation Involving Kinetics of Surface Reactions with Bidentate Adsorbates",
+      "doi": "10.26434/chemrxiv-2023-vsmbm",
+      "authors_list": [],
+      "year": null,
+      "journal": "",
+      "abstract": "",
+      "source": "orcid_fallback",
+      "s2_id": null,
+      "arxiv_id": null
+    },
+    {
+      "title": "Linking Experimental and Ab Initio Thermochemistry of Adsorbates with a Generalized Thermochemical Hierarchy.",
+      "authors_list": [
+        "Bjarne Kreitz",
+        "Kento Abeywardane",
+        "C. Goldsmith"
+      ],
+      "year": 2023,
+      "doi": "10.1021/acs.jctc.3c00112",
+      "arxiv_id": null,
+      "journal": "Journal of chemical theory and computation",
+      "abstract": "Enthalpies of formation of adsorbates are crucial parameters in the microkinetic modeling of heterogeneously catalyzed reactions since they quantify the stability of intermediates on the catalyst surface. This quantity is often computed using density functional theory (DFT), as more accurate methods are computationally still too expensive, which means that the derived enthalpies have a large uncertainty. In this study, we propose a new error cancellation method to compute the enthalpies of formation of adsorbates from DFT more accurately through a generalized connectivity-based hierarchy. The enthalpy of formation is determined through a hypothetical reaction that preserves atomistic and bonding environments. The method is applied to a data set of 60 adsorbates on Pt(111) with up to 4 heavy (non-hydrogen) atoms. Enthalpies of formation of the fragments required for the bond balancing reactions are based on experimental heats of adsorption for Pt(111). The comparison of enthalpies of formation derived from different DFT functionals using the isodesmic reactions shows that the effect of the functional is significantly reduced due to the error cancellation. Thus, the proposed methodology creates an interconnected thermochemical network of adsorbates that combines experimental with ab initio thermochemistry in a single and more accurate thermophysical database.",
+      "source": "semantic_scholar",
+      "s2_id": "b3ae28683cfc4960cbcfaa40657ea13a3c28620a"
+    },
+    {
+      "title": "Automated Generation of Microkinetics forHeterogeneously Catalyzed ReactionsConsidering Correlated Uncertainties",
+      "doi": "10.26434/chemrxiv-2023-hnb4l",
+      "authors_list": [],
+      "year": null,
+      "journal": "",
+      "abstract": "",
+      "source": "orcid_fallback",
+      "s2_id": null,
+      "arxiv_id": null
+    },
+    {
+      "title": "Linking Experimental and Ab-initio Thermochemistry of Adsorbates with a Generalized Thermochemical Hierarchy",
+      "doi": "10.26434/chemrxiv-2023-kfwd0",
+      "authors_list": [],
+      "year": null,
+      "journal": "",
+      "abstract": "",
+      "source": "orcid_fallback",
+      "s2_id": null,
+      "arxiv_id": null
+    },
+    {
+      "title": "Microkinetic Modeling of the Transient CO2 Methanation with DFT\u2010Based Uncertainties in a Berty Reactor",
+      "authors_list": [
+        "Bjarne Kreitz",
+        "G. Wehinger",
+        "C. Goldsmith",
+        "T. Turek"
+      ],
+      "year": 2022,
+      "doi": "10.1002/cctc.202200570",
+      "arxiv_id": null,
+      "journal": "ChemCatChem",
+      "abstract": "The transient operation of methanation reactors can become desirable when coupled with fluctuating renewable energies in Power\u2010to\u2010Gas scenarios, which requires suitable kinetic approaches that can describe the transient catalytic phenomena. A combined experimental and theoretical investigation of the transient CO2 methanation is conducted using concentration forcing to derive a suitable microkinetic model. Methanation experiments are performed with a Ni/SiO2 catalyst in a Berty\u2010type reactor at industrially relevant conditions. The microkinetics are based on previous work and were automatically constructed for the Ni(111) facet using the Reaction Mechanism Generator. A feasible set of energetic parameters of the microkinetic models was identified in a theory\u2010constrained optimization procedure within the DFT uncertainty space that can accurately reproduce the experimental results on a first\u2010principles basis. The microkinetic model unravels that the formation of H2O* and CH3* control the activity and selectivity of Ni(111) under the investigated conditions.",
+      "source": "semantic_scholar",
+      "s2_id": "fd884b45adf3d5c63cc8f53019b149165c002411"
+    },
+    {
+      "title": "Detailed Microkinetics for the Oxidation of Exhaust Gas Emissions through Automated Mechanism Generation",
+      "authors_list": [
+        "Bjarne Kreitz",
+        "Patrick Lott",
+        "Jongyoon Bae",
+        "Katr\u00edn Bl\u00f6ndal",
+        "Sofia D. Angeli",
+        "Zachary W. Ulissi",
+        "F. Studt",
+        "C. Goldsmith",
+        "O. Deutschmann"
+      ],
+      "year": 2022,
+      "doi": "10.1021/acscatal.2c03378",
+      "arxiv_id": null,
+      "journal": "ACS Catalysis",
+      "abstract": "Emissions from vehicles contain a variety of pollutants that must be either oxidized or reduced e\ufb03ciently in the catalytic converter. Improvements to the catalyst require knowledge of the microkinetics, but the complexity of the exhaust gas mixture makes it challenging to identify the reaction network. This complexity was tackled by using the \u201dReaction Mechanism Generator\u201d (RMG) to automatically generate microkinetic models for the oxidation of combustion byproducts from stoichiometric gasoline direct injection engines on Pt(111). The possibilities and the limitations encountered during the generation procedure are discussed in detail. A combination of \ufb01rst-principles-based mechanism construction and top-down parameter re\ufb01nement allows to describe experimental results obtained by kinetic testing of a Pt/Al 2 O 3 monolith under stoichiometric conditions. The study can serve as a blueprint for the usage of RMG for other challenging heterogeneously catalyzed reactions.",
+      "source": "semantic_scholar",
+      "s2_id": "1eeb56a5864eba4cde20930269390201f52022ca"
+    },
+    {
+      "title": "Assessment of Concentration and Temperature Distribution in a Berty Reactor for an Exothermic Reaction",
+      "authors_list": [
+        "Scott D. Anderson",
+        "Bjarne Kreitz",
+        "T. Turek",
+        "G. Wehinger"
+      ],
+      "year": 2022,
+      "doi": "10.1021/acs.iecr.2c01459",
+      "arxiv_id": null,
+      "journal": "Industrial &amp; Engineering Chemistry Research",
+      "abstract": "",
+      "source": "semantic_scholar",
+      "s2_id": "ac72acbeaf1d3f9532a8bd57c68a13964ac930c7"
+    },
+    {
+      "title": "Detailed microkinetics for the oxidation of exhaust gas emissions through automated mechanism generation",
+      "doi": "10.26434/chemrxiv-2022-r5wn0-v2",
+      "authors_list": [],
+      "year": null,
+      "journal": "",
+      "abstract": "",
+      "source": "orcid_fallback",
+      "s2_id": null,
+      "arxiv_id": null
+    },
+    {
+      "title": "Detailed microkinetics for the oxidation of exhaust gas emissions through automated mechanism generation",
+      "doi": "10.26434/chemrxiv-2022-r5wn0",
+      "authors_list": [],
+      "year": null,
+      "journal": "",
+      "abstract": "",
+      "source": "orcid_fallback",
+      "s2_id": null,
+      "arxiv_id": null
+    },
+    {
+      "title": "Non-Idealities in Lab-Scale Kinetic Testing: A Theoretical Study of a Modular Temkin Reactor",
+      "authors_list": [
+        "G. Wehinger",
+        "Bjarne Kreitz",
+        "C. Goldsmith"
+      ],
+      "year": 2022,
+      "doi": "10.3390/catal12030349",
+      "arxiv_id": null,
+      "journal": "Catalysts",
+      "abstract": "The Temkin reactor can be applied for industrial relevant catalyst testing with unmodified catalyst particles. It was assumed in the literature that this reactor behaves as a cascade of continuously stirred tank reactors (CSTR). However, this assumption was based only on outlet gas composition or inert residence time distribution measurements. The present work theoretically investigates the catalytic CO2 methanation as a test case on different catalyst geometries, a sphere, and a ring, inside a single Temkin reaction chamber under isothermal conditions. Axial gas-phase species profiles from detailed computational fluid dynamics (CFD) are compared with a CSTR and 1D plug-flow reactor (PFR) model using a sophisticated microkinetic model. In addition, a 1D chemical reactor network (CRN) model was developed, and model parameters were adjusted based on the CFD simulations. Whereas the ideal reactor models overpredict the axial product concentrations, the CRN model results agree well with the CFD simulations, especially under low to medium flow rates. This study shows that complex flow patterns greatly influence species fields inside the Temkin reactor. Although residence time measurements suggest CSTR-like behavior, the reactive flow cannot be described by either a CSTR or PFR model but with the developed CRN model.",
+      "source": "semantic_scholar",
+      "s2_id": "350545fd86e71a2a61b81ecedcb9117fbc901b44"
+    },
+    {
+      "title": "Quantifying the Impact of Parametric Uncertainty on Automatic Mechanism Generation for CO2 Hydrogenation on Ni(111)",
+      "authors_list": [
+        "Bjarne Kreitz",
+        "K. Sargsyan",
+        "Katr\u00edn Bl\u00f6ndal",
+        "Emily J. Mazeau",
+        "R. West",
+        "G. Wehinger",
+        "T. Turek",
+        "C. Goldsmith"
+      ],
+      "year": 2021,
+      "doi": "10.1021/jacsau.1c00276",
+      "arxiv_id": null,
+      "journal": "JACS Au",
+      "abstract": "Automatic mechanism generation is used to determine mechanisms for the CO2 hydrogenation on Ni(111) in a two-stage process while considering the correlated uncertainty in DFT-based energetic parameters systematically. In a coarse stage, all the possible chemistry is explored with gas-phase products down to the ppb level, while a refined stage discovers the core methanation submechanism. Five thousand unique mechanisms were generated, which contain minor perturbations in all parameters. Global uncertainty assessment, global sensitivity analysis, and degree of rate control analysis are performed to study the effect of this parametric uncertainty on the microkinetic model predictions. Comparison of the model predictions with experimental data on a Ni/SiO2 catalyst find a feasible set of microkinetic mechanisms within the correlated uncertainty space that are in quantitative agreement with the measured data, without relying on explicit parameter optimization. Global uncertainty and sensitivity analyses provide tools to determine the pathways and key factors that control the methanation activity within the parameter space. Together, these methods reveal that the degree of rate control approach can be misleading if parametric uncertainty is not considered. The procedure of considering uncertainties in the automated mechanism generation is not unique to CO2 methanation and can be easily extended to other challenging heterogeneously catalyzed reactions.",
+      "source": "semantic_scholar",
+      "s2_id": "8854617a4b135bc1e00781b99d61fed6d5176872"
+    },
+    {
+      "title": "Microkinetic Modeling of the CO2 Desorption from Supported Multifaceted Ni Catalysts",
+      "authors_list": [
+        "Bjarne Kreitz",
+        "G. Wehinger",
+        "C. Goldsmith",
+        "T. Turek"
+      ],
+      "year": 2021,
+      "doi": "10.1021/acs.jpcc.0c09985",
+      "arxiv_id": null,
+      "journal": "Journal of Physical Chemistry C",
+      "abstract": "The conversion of CO2 into valuable products with hydrogenation reactions on Ni catalysts requires a fundamental understanding of the interaction of CO2 with the Ni surface. Microkinetic modeling i...",
+      "source": "semantic_scholar",
+      "s2_id": "3ce3b0c6d3f1c8e26571c5d6625c2b953ef6c370"
+    },
+    {
+      "title": "Spray-Dried Ni Catalysts with Tailored Properties for CO2 Methanation",
+      "authors_list": [
+        "Bjarne Kreitz",
+        "Aurina Mart\u00ednez Arias",
+        "Jan M. L. Martin",
+        "A. Weber",
+        "T. Turek"
+      ],
+      "year": 2020,
+      "doi": "10.3390/catal10121410",
+      "arxiv_id": null,
+      "journal": "Open Access Journal",
+      "abstract": "A catalyst production method that enables the independent tailoring of structural properties of the catalyst, such as pore size, metal particle size, metal loading or surface area, allows increasing the efficiency of a catalytic process. Such tailoring can help to make the valorization of CO2 into synthetic fuels on Ni catalysts competitive to conventional fossil fuel production. In this work, a new spray-drying method was used to produce Ni catalysts supported on SiO2 as well as Al2O3 nanoparticles with tunable properties. The influence of the primary particle size of the support, different metal loadings, and heat treatments were applied to investigate the potential to tailor the catalyst properties. The catalysts were examined with physical and chemical characterization methods, including X-ray diffraction, temperature-programmed reduction, and chemisorption. A temperature-scanning technique was applied to screen the catalysts for the CO2 methanation. With the spray-drying method presented here, well organized porous spherical nanoparticles of highly dispersed NiO nanoparticles supported on silica with tunable properties were produced and characterized. Moreover, the pore size, metal particle size, and metal loading can be controlled independently, which allows to produce catalyst particles with desired properties. Ni/SiO2 catalysts with surface areas of up to 40 m2 g\u22121 with Ni crystals in the range of 4 nm were produced, which exhibited a high activity for the CO2 methanation.",
+      "source": "semantic_scholar",
+      "s2_id": "03f9ffc01a5eb943260d3a0036f7fb572ab768bc"
+    },
+    {
+      "title": "Measuring Adsorption Capacity of Supported Catalysts with a Novel Quasi\u2010Continuous Pulse Chemisorption Method",
+      "authors_list": [
+        "Jens Friedland",
+        "Bjarne Kreitz",
+        "Heiner Grimm",
+        "T. Turek",
+        "R. G\u00fcttel"
+      ],
+      "year": 2020,
+      "doi": "10.1002/cctc.202000278",
+      "arxiv_id": null,
+      "journal": "ChemCatChem",
+      "abstract": "An improved pulse\u2010chemisorption technique is presented, which is proven to be independent of the strength of interaction between adsorptive and catalyst material. The methodology is based on the transient mass balance of the adsorptive, allowing for quantitative evaluation of the pulse\u2010signal obtained from the experiment. Two experimental strategies for determination of the adsorption capacity are introduced, with and without using an internal standard. The methodology is illustratively discussed based on simulation results and verified by chemisorption experiments of hydrogen and carbon dioxide on a supported nickel catalyst. In addition, temperature and dosing effects are examined and benchmarked with volumetric measurements of the adsorption capacity. The proposed mathematical evaluation method of the measured data can be applied directly to experiments performed in standard equipment for pulse\u2010chemisorption or in modified catalyst test rigs to measure adsorption capacity before and after reaction experiments. The technique shows potential for determination of sorption kinetics and combination with operando spectroscopy.",
+      "source": "semantic_scholar",
+      "s2_id": "1994db296024d94abac484bc76224d3ca80b492b"
+    },
+    {
+      "title": "Characterization of a modular Temkin reactor with experiments and computational fluid dynamics simulations",
+      "authors_list": [
+        "G. Wehinger",
+        "Bjarne Kreitz",
+        "A. Nagy",
+        "T. Turek"
+      ],
+      "year": 2020,
+      "doi": "10.1016/j.cej.2020.124342",
+      "arxiv_id": null,
+      "journal": "Chemical Engineering Journal",
+      "abstract": "Abstract The determination of reaction kinetics without the influence of transport limitations is challenging, especially under industrially relevant conditions, particle shapes, and sizes. The Temkin reactor concept, developed in the 1960s, allows to measure reaction kinetics with a small number of unmodified catalyst particles operating under assumed isothermal and plug-flow conditions. In this study, a recently developed modular Temkin reactor design is studied experimentally and with detailed CFD simulations in order to shed light on the residence time distribution without reaction. Cold fluid volumetric flow rates are varied in the range of 50\u2013200\u202f ml N min - 1 and two different particle shapes (spheres and rings) are tested. Pulse experiments and passive scalar computational fluid dynamics (CFD) simulations verify that this reactor design behaves like a cascade of stirred tank reactors with Bodenstein numbers of each chamber smaller than three. Mean age of air CFD simulations highlight potentials to re-design the entrance of the chamber in order to minimize stagnation zones.",
+      "source": "semantic_scholar",
+      "s2_id": "b76f52bc7f1c2b6983dca966c36c429672ca91ac"
+    },
+    {
+      "title": "Dynamic simulation of the CO2 methanation in a micro-structured fixed-bed reactor",
+      "authors_list": [
+        "Bjarne Kreitz",
+        "G. Wehinger",
+        "T. Turek"
+      ],
+      "year": 2019,
+      "doi": "10.1016/j.ces.2018.09.053",
+      "arxiv_id": null,
+      "journal": "Chemical Engineering Science",
+      "abstract": "Abstract The dynamic operation of methanation reactors is under discussion due to the increasing interest in power-to-gas technology. Here, hydrogen is supplied via a water electrolyzer which is powered by fluctuating renewable energy sources. With dynamic process modeling and simulation, the methanation reactor can be designed. Since the methanation reaction proceeds fast in the presence of an active catalyst and releases a large amount of reaction heat, the model has to account for the pellet phase in terms of energy, species mass and reaction. In this work, a dynamic 1D heterogeneous model is presented. The model describes a micro-structured fixed-bed reactor for the methanation of carbon dioxide under industrially relevant operating conditions with periodic oscillations of the inlet feed composition. The simulation shows that the hot spot temperature changes significantly during the periodic operation, both in position and magnitude. For high frequency changes the reactor behavior moves towards a thermally relaxed steady state. The outlet methane concentration in the dynamic operation does not reach the steady-state value. However, the model reveals interesting insights of the dynamic CO2 methanation, which will be accompanied with experiments in the future.",
+      "source": "semantic_scholar",
+      "s2_id": "1bd6ca2dfd1be6dd01c7b74ed25a91d8d7f34260"
+    },
+    {
+      "title": "Studies on the dynamic methanation of CO2",
+      "authors_list": [
+        "Bjarne Kreitz",
+        "G. Wehinger",
+        "T. Turek"
+      ],
+      "year": 2018,
+      "doi": "10.1002/cite.201855224",
+      "arxiv_id": null,
+      "journal": "Chemie Ingenieur Technik",
+      "abstract": "",
+      "source": "semantic_scholar",
+      "s2_id": "b7498c554682bb55f2fd54c01bddc6143d3e9a8c"
+    },
+    {
+      "title": "Process modelling of an alkaline water electrolyzer",
+      "authors_list": [
+        "P. Haug",
+        "Bjarne Kreitz",
+        "Matthias Koj",
+        "T. Turek"
+      ],
+      "year": 2017,
+      "doi": "10.1016/j.ijhydene.2017.05.031",
+      "arxiv_id": null,
+      "journal": "International Journal of Hydrogen Energy",
+      "abstract": "",
+      "source": "semantic_scholar",
+      "s2_id": "02fafd4d7d54bcb6110db8d76f9643dbd16968c8"
+    },
+    {
+      "title": "Modellierung und Simulation einer alkalischen Wasserelektrolyse",
+      "authors_list": [
+        "P. Haug",
+        "Bjarne Kreitz",
+        "T. Turek"
+      ],
+      "year": 2016,
+      "doi": "10.1002/cite.201650061",
+      "arxiv_id": null,
+      "journal": "Chemie Ingenieur Technik",
+      "abstract": "",
+      "source": "semantic_scholar",
+      "s2_id": "3448a583befcacf85d1077657ace48844570b26d"
+    },
+    {
+      "title": "Reflections on the Reproducibility of Commercial LLM Performance in Empirical Software Engineering Studies",
+      "abstract": "Large Language Models have gained remarkable interest in industry and academia. The increasing interest in LLMs in academia is also reflected in the number of publications on this topic over the last years. For instance, alone 78 of the around 425 publications at ICSE 2024 performed experiments with LLMs. Conducting empirical studies with LLMs remains challenging and raises questions on how to achieve reproducible results, for both researchers and practitioners. One important step towards excelling in empirical research on LLM and their application is to first understand to what extent current research results are eventually reproducible and what factors may impede reproducibility. This investigation is within the scope of our work. We contribute an analysis of the reproducibility of LLM-centric studies, provide insights into the factors impeding reproducibility, and discuss suggestions on how to improve the current state. In particular, we studied the 85 articles describing LLM-centric studies, published at ICSE 2024 and ASE 2024. Of the 85 articles, 18 provided research artefacts and used OpenAI models. We attempted to replicate those 18 studies. Of the 18 studies, only five were sufficiently complete and executable. For none of the five studies, we were able to fully reproduce the results. Two studies seemed to be partially reproducible, and three studies did not seem to be reproducible. Our results highlight not only the need for stricter research artefact evaluations but also for more robust study designs to ensure the reproducible value of future publications.",
+      "arxiv_id": "2510.25506v3",
+      "authors_list": [
+        "Florian Angermeir",
+        "Maximilian Amougou",
+        "Mark Kreitz",
+        "Andreas Bauer",
+        "Matthias Linhuber",
+        "Davide Fucci",
+        "Fabiola Moy\u00f3n C.",
+        "Daniel Mendez",
+        "Tony Gorschek"
+      ],
+      "year": 2025,
+      "source": "arxiv",
+      "doi": "10.1145/3744916.3773207"
+    },
+    {
+      "title": "Prospects for Using Artificial Intelligence to Understand Intrinsic Kinetics of Heterogeneous Catalytic Reactions",
+      "abstract": "Artificial intelligence (AI) is influencing heterogeneous catalysis research by accelerating simulations and materials discovery. A key frontier is integrating AI with multiscale models and multimodal experiments to address the \"many-to-one\" challenge of linking intrinsic kinetics to observables. Advances in machine-learned force fields, microkinetics, and reactor modeling enable rapid exploration of chemical spaces, while operando and transient data provide unprecedented insight. Yet, inconsistent data quality and model complexity limit mechanistic discovery. Generative and agentic AI can automate model generation, quantify uncertainty, and couple theory with experiment, realizing \"self-driving models\" that produce interpretable, reproducible, and transferable understanding of catalytic systems.",
+      "arxiv_id": "2510.18911v1",
+      "authors_list": [
+        "Andrew J. Medford",
+        "Todd N. Whittaker",
+        "Bjarne Kreitz",
+        "David W. Flaherty",
+        "John R. Kitchin"
+      ],
+      "year": 2025,
+      "source": "arxiv",
+      "doi": null
+    }
+  ],
+  "orcid_dois": [
+    "10.1016/j.coche.2026.101232",
+    "10.1016/j.jcat.2025.116407",
+    "10.26434/chemrxiv-2025-l7135",
+    "10.1002/cite.202500029",
+    "10.1021/acs.jcim.4c02167",
+    "10.1016/j.compchemeng.2024.108922",
+    "10.1039/d4cs00768a",
+    "10.26434/chemrxiv-2024-pn13j",
+    "10.1002/cctc.202400371",
+    "10.26434/chemrxiv-2024-fjfmd",
+    "10.1002/cite.202300182",
+    "10.1039/d3dd00184a",
+    "10.1002/anie.202306514",
+    "10.1002/ange.202306514",
+    "10.26434/chemrxiv-2023-vsmbm",
+    "10.1021/acs.jctc.3c00112",
+    "10.26434/chemrxiv-2023-hnb4l",
+    "10.26434/chemrxiv-2023-kfwd0",
+    "10.1002/cctc.202200570",
+    "10.1021/acscatal.2c03378",
+    "10.1021/acs.iecr.2c01459",
+    "10.26434/chemrxiv-2022-r5wn0-v2",
+    "10.26434/chemrxiv-2022-r5wn0",
+    "10.3390/catal12030349",
+    "10.1021/jacsau.1c00276",
+    "10.1021/acs.jpcc.0c09985",
+    "10.3390/catal10121410",
+    "10.1002/cctc.202000278",
+    "10.1016/j.cej.2020.124342",
+    "10.1016/j.ces.2018.09.053",
+    "10.1002/cite.201855224",
+    "10.1016/j.ijhydene.2017.05.031",
+    "10.1002/cite.201650061"
+  ],
+  "orcid": "0000-0003-0158-9147"
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title and page.url != "/" %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description | strip_html | truncate: 160 }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,600;1,6..12,300;1,6..12,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    {% seo %}
+    {% feed_meta %}
+  </head>
+  <body>
+    <div class="page">
+
+      <aside class="sidebar">
+        {% if site.pi.photo and site.pi.photo != "" %}
+        <img src="{{ '/assets/images/people/' | append: site.pi.photo | relative_url }}"
+             alt="{{ site.pi.name }}"
+             class="profile-photo">
+        {% else %}
+        <div class="profile-photo profile-placeholder">👤</div>
+        {% endif %}
+
+        <div class="sidebar-name">{{ site.pi.name }}</div>
+        <div class="sidebar-meta">{{ site.pi.title }}</div>
+        <div class="sidebar-meta">{{ site.pi.department }}</div>
+        <div class="sidebar-meta">{{ site.pi.institution }}</div>
+
+        <nav class="sidebar-nav">
+          <a href="{{ '/' | relative_url }}"{% if page.url == "/" %} class="active"{% endif %}>Home</a>
+          <a href="{{ '/research/' | relative_url }}"{% if page.url contains "/research" %} class="active"{% endif %}>Research</a>
+          <a href="{{ '/people/' | relative_url }}"{% if page.url contains "/people" %} class="active"{% endif %}>People</a>
+          <a href="{{ '/publications/' | relative_url }}"{% if page.url contains "/publications" %} class="active"{% endif %}>Publications</a>
+          <a href="{{ '/tools/' | relative_url }}"{% if page.url contains "/tools" %} class="active"{% endif %}>Tools</a>
+          <a href="{{ '/join/' | relative_url }}"{% if page.url contains "/join" %} class="active"{% endif %}>Join</a>
+        </nav>
+
+        <div class="sidebar-links">
+          {% if site.pi.email and site.pi.email != "" %}
+          <a href="mailto:{{ site.pi.email }}" title="Email" class="sidebar-icon">&#9993;</a>
+          {% endif %}
+          {% if site.pi.github and site.pi.github != "" %}
+          <a href="{{ site.pi.github }}" title="GitHub" class="sidebar-icon" target="_blank" rel="noopener">&#128187;</a>
+          {% endif %}
+          {% if site.pi.google_scholar and site.pi.google_scholar != "" %}
+          <a href="{{ site.pi.google_scholar }}" title="Google Scholar" class="sidebar-icon" target="_blank" rel="noopener">Scholar</a>
+          {% endif %}
+          {% if site.pi.orcid and site.pi.orcid != "" %}
+          <a href="https://orcid.org/{{ site.pi.orcid }}" title="ORCID" class="sidebar-icon" target="_blank" rel="noopener">ORCID</a>
+          {% endif %}
+        </div>
+      </aside>
+
+      <main class="content">
+        {{ content }}
+      </main>
+
+    </div>
+  </body>
+</html>

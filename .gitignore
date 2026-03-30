@@ -1,0 +1,9 @@
+_site/
+.jekyll-cache/
+.sass-cache/
+vendor/
+Gemfile.lock
+.DS_Store
+scripts/.venv/
+scripts/__pycache__/
+*.pyc

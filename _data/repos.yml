@@ -1,0 +1,27 @@
+# Software tools / repositories
+#
+# Fields:
+#   name        - display name
+#   description - one-sentence description
+#   url         - GitHub repository URL
+#   docs_url    - documentation URL (optional, leave "" to hide)
+#   logo        - filename in assets/images/repos/ (optional)
+
+# Example:
+# - name: "MyTool"
+#   description: "A Python package for computing reaction rates from first principles."
+#   url: "https://github.com/kreitz-group/mytool"
+#   docs_url: "https://kreitz-group.github.io/mytool"
+#   logo: ""
+
+- name: "Reaction Mechanism Generator (RMG)"
+  description: "RMG can automatically construct detailed chemical kinetic models for gas-phase and surface catalyzed reactions"
+  url: "https://github.com/ReactionMechanismGenerator"
+  docs_url: "https://rmg.mit.edu/"
+  logo: "rmg-logo.png"
+  
+- name: "Cantera"
+  description: "Cantera is an open-source suite of tools for problems involving chemical kinetics, thermodynamics, and transport processes."
+  url: "https://cantera.org/index.html"
+  docs_url: "https://cantera.org/index.html"
+  logo: "cantera-logo.png"

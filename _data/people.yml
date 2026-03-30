@@ -1,0 +1,151 @@
+# People data for the Kreitz Research Group website
+#
+# Fields:
+#   id            - unique slug (kebab-case)
+#   name          - full name
+#   status        - "pi" | "current" | "alumni"
+#   type          - (for current members) "graduate" | "undergraduate"
+#   role          - e.g. "Assistant Professor", "Ph.D. Student", "Undergraduate Researcher"
+#   photo         - filename in assets/images/people/ (leave "" if no photo)
+#   education     - education background (one line)
+#   info          - short bio or awards (can be empty "")
+#   year_joined   - integer year (used to sort current members)
+#   current_position - for alumni: their current role elsewhere
+#   email         - email address (leave "" to hide)
+#   github        - GitHub profile URL (leave "" to hide)
+#   google_scholar - Google Scholar URL (leave "" to hide)
+#   linkedin      - LinkedIn URL (leave "" to hide)
+#   cv_url        - path to CV PDF (leave "" to hide)
+
+# -------------------------------------------------------
+# Principal Investigator
+# -------------------------------------------------------
+- id: bjarne-kreitz
+  name: "Bjarne Kreitz"
+  role: "Assistant Professor"
+  status: pi
+  photo: "kreitz.jpg"
+  education: "B.Sc. (2015), M.Sc. (2016), Dr.-Ing. (2021), Clausthal University of Technology; Postdoctoral Fellow, Brown University (2021–2024)"
+  info: "Dr. Kreitz is an Assistant Professor at the Georgia Institute of Technology in the School of Chemical and Biomolecular Engineering since January 2025. He obtained a B. Sc. (2015), M. Sc. (2016) and Dr.-Ing. (2021) from Clausthal University of Technology (Germany) in Chemical Engineering. His postdoctoral research at Brown University (2021-2024) was funded by the Feodor Lynen Postdoctoral Scholarship of the Alexander von Humboldt Foundation. Recently, Dr. Kreitz received the Hanns Hofmann Award of the DECHEMA/VDI subject division Reaction Engineering. He is also a committee member of the NaWuReT, a German early career chemical engineer group that organizes events to foster a vibrant chemical engineering community. Outside of work, you will probably see him running through Piedmont Park, bouldering at a nearby climbing gym, sipping on a craft beer, or on a trail somewhere..."
+  current_position: "Assistant Professor, Georgia Tech ChBE"
+  email: "bkreitz3@gatech.edu"
+  github: ""
+  google_scholar: ""
+  linkedin: ""
+  cv_url: ""
+
+# -------------------------------------------------------
+# Current Members
+# -------------------------------------------------------
+
+# --- Graduate Students ---
+
+- id: seth-porter
+  name: "Seth G. Porter"
+  role: "Ph.D. Student"
+  status: current
+  type: graduate
+  photo: "seth-porter.jpg"
+  education: "B.S. Chemical Engineering, Auburn University (2021)"
+  info: "Seth is a Ph.D. student in Chemical and Biomolecular Engineering at Georgia Tech. He earned his B.S. in Chemical Engineering from Auburn University in May 2021 and worked as a Process Engineer and Production Supervisor for WestRock for three years before enrolling at Georgia Tech. His research seeks to explore automated reaction mechanism generation for metal oxide catalysts to study oxidative dehydrogenation reactions of alkanes. During his free time, Seth enjoys staying active by running triathlons, rock climbing, and playing disc golf."
+  year_joined: 2024
+  current_position: ""
+  email: ""
+  github: ""
+  google_scholar: ""
+  linkedin: ""
+  cv_url: ""
+
+- id: suhde-makki
+  name: "Suhde (Shohda) Makki"
+  role: "Ph.D. Student"
+  status: current
+  type: graduate
+  photo: "suhde-makki.png"
+  education: "B.Sc. Chemical Engineering, Qatar University (2022); M.Sc. Chemical Engineering, Texas A&M University at Qatar (2024)"
+  info: "Shohda is a 2nd year Ph.D. student in Chemical Engineering. She earned her BSc in Chemical Engineering from Qatar University in 2022 and her MSc in Chemical Engineering from Texas A&M University at Qatar in 2024. Her research focuses on multi-scale modeling of polyethylene  hydrogenolysis, with the goal of enabling catalytic plastic upcycling by converting waste polymers into more valuable chemicals. In her free time, she enjoys sports, spending time in nature, and spending time with family."
+  year_joined: 2024
+  current_position: ""
+  email: ""
+  github: ""
+  google_scholar: ""
+  linkedin: ""
+  cv_url: ""
+
+- id: conor-obrien
+  name: "Conor O'Brien"
+  role: "Ph.D. Student"
+  status: current
+  type: graduate
+  photo: "conor-obrien.jpg"
+  education: "B.S. Chemical Engineering, North Carolina State University (2025)"
+  info: "Conor O’Brien earned his B.S. in Chemical Engineering from North Carolina State University in 2025. During his undergraduate studies, he performed experimental heterogeneous catalysis research on the dry reforming of methane in Dr. Fanxing Li’s group, focusing on the porosity engineering of mesoporous silica supports. At Georgia Tech, his research focuses on a combination of computations and validating experiments in the theory-driven design of metal nanoparticles with enhanced regioselectivity for propylene hydroformylation. In his free time, he enjoys weightlifting, watching sports and movies, playing videogames, playing basketball, hiking, and cooking"
+  year_joined: 2025
+  current_position: ""
+  email: ""
+  github: ""
+  google_scholar: ""
+  linkedin: ""
+  cv_url: ""
+
+# --- Undergraduate Students ---
+
+- id: gabrielle-freund
+  name: "Gabrielle (Gabby) Freund"
+  role: "Undergraduate Researcher"
+  status: current
+  type: undergraduate
+  photo: "gabrielle-freund.jpeg"
+  education: ""
+  info: ""
+  year_joined: 2025
+  current_position: ""
+  email: ""
+  github: ""
+  google_scholar: ""
+  linkedin: ""
+  cv_url: ""
+
+- id: austin-saylor
+  name: "Austin Saylor"
+  role: "Undergraduate Researcher"
+  status: current
+  type: undergraduate
+  photo: "austin-saylor.jpeg"
+  education: ""
+  info: "Austin is a third-year undergraduate majoring in Chemical and Biomolecular Engineering at Georgia Tech. His research focuses on the microkinetic modeling of CO₂ methanation on nickel catalysts. He is currently working with experimental data from a profile reactor to evaluate microkinetic models. In his free time, Austin enjoys watching sports like football and Formula 1, playing video games, and baking."
+  year_joined: 2025
+  current_position: ""
+  email: ""
+  github: ""
+  google_scholar: ""
+  linkedin: ""
+  cv_url: ""
+
+- id: matthew-abernathy
+  name: "Matthew Abernathy"
+  role: "Undergraduate Researcher"
+  status: current
+  type: undergraduate
+  photo: "matthew-abernathy.png"
+  education: "B.S. Chemical & Biomolecular Engineering / Applied Languages, Georgia Tech (expected 2026)"
+  info: "Matthew is a fourth year double major in Chemical & Biomolecular Engineering and Applied Languages at Georgia Tech from Columbus Georgia. He joined the Kreitz Lab driven by an interest in Chemical Kinetics, Catalysis, and Reactor Design. Currently, he is working on developing a generative AI framework for screening of catalytic materials. In his free time he enjoys cooking, listening to classical music, and playing abstract strategy games, like Go and Chess."
+  year_joined: 2025
+  current_position: ""
+  email: ""
+  github: ""
+  google_scholar: ""
+  linkedin: ""
+  cv_url: ""
+
+# -------------------------------------------------------
+# Alumni  (move entries here when people graduate/leave)
+# -------------------------------------------------------
+# - id: john-smith
+#   name: "John Smith"
+#   role: "Ph.D. Student"
+#   status: alumni
+#   photo: ""
+#   year_joined: 2020
+#   current_position: "Postdoc, MIT"
+#   linkedin: ""
