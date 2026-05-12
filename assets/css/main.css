@@ -8,7 +8,7 @@
    ---------------------------------------------------------- */
 :root {
   --sidebar-width: 15em;
-  --content-max-width: 40em;
+  --content-max-width: 52em;
   --font-small: 12pt;
   --font-body: 14pt;
   --font-h1: 20pt;
@@ -50,7 +50,7 @@ body {
   line-height: 1.5em;
   color: var(--text);
   background: var(--bg);
-  max-width: 80em;
+  max-width: 92em;
   margin: 0 auto;
 }
 
@@ -366,11 +366,11 @@ pre code {
 }
 
 .pub-thumb {
-  width: 12em;
-  height: 12em;
-  object-fit: cover;
+  width: 15em;
+  height: auto;
   border-radius: 0.25em;
   flex-shrink: 0;
+  align-self: flex-start;
 }
 
 .pub-body {
@@ -430,7 +430,7 @@ pre code {
    ---------------------------------------------------------- */
 .research-figure {
   float: right;
-  max-width: 7cm;
+  max-width: 10cm;
   margin: 0.25em 0 1em 1.5em;
   clear: both;
 }
@@ -491,6 +491,41 @@ pre code {
 .news-body p {
   margin: 0;
   display: inline;
+}
+
+/* ----------------------------------------------------------
+   Photos page
+   ---------------------------------------------------------- */
+.photo-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  margin: 1em 0;
+}
+
+.photo-item {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.photo-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.25em;
+  border: 1px solid var(--border);
+}
+
+.photo-caption {
+  margin-top: 0.4em;
+  font-size: var(--font-small);
+  color: var(--muted);
+  line-height: 1.4em;
+}
+
+.photo-date {
+  font-style: italic;
 }
 
 /* ----------------------------------------------------------

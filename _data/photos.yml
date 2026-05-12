@@ -1,0 +1,22 @@
+# Group photos shown on the /photos/ page.
+# Order in this file = display order on the page (top-left first).
+#
+# Fields:
+#   image    — Required. Filename inside assets/images/photos/.
+#   caption  — Optional. Text shown below the image.
+#   date     — Optional. ISO date (YYYY-MM-DD); rendered as "MMM YYYY" if set.
+#
+# Example entry — uncomment and edit once you've added the file:
+#
+
+- image: ACS_Spring26.jpg
+  caption: "Kreitz Group at the ACS Spring 2026 meeting: From left to right: Conor, Bjarne, Seth, Shohda"
+  date: 2026-03-25
+  
+- image: GroupPicture_Spring2026.png
+  caption: "Group photo on GT campus, Spring 2026: From left to right: Austin, Conor, Bjarne, Seth, Shohda, Gabby"
+  date: 2026-03-20
+
+- image: Spring25.png
+  caption: "Group photo on with the Rambling Wreck, Spring 2026: From left to right: Seth, Bjarne, Shohda"
+  date: 2025-03-20
