@@ -1,0 +1,17 @@
+# News items shown on the /news/ page.
+# The page sorts by date (newest first) and groups by year automatically.
+# Add new entries at the top as they happen.
+#
+# Fields:
+#   date  — ISO date (YYYY-MM-DD). Required. Used for sorting and grouping.
+#   body  — Required. Inline Markdown works (links, **bold**, etc.).
+#   link  — Optional. If set, a small "→" link appears after the body.
+
+- date: 2026-05-01
+  body: "Example news item — replace with your first real entry."
+
+- date: 2026-01-15
+  body: "Our paper on [coverage-dependent thermophysical properties](https://doi.org/10.1021/acs.jcim.4c02167) is now published in *JCIM*."
+
+- date: 2025-09-01
+  body: "Kreitz Research Group launched at Georgia Tech."

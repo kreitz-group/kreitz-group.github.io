@@ -31,6 +31,7 @@
 
         <nav class="sidebar-nav">
           <a href="{{ '/' | relative_url }}"{% if page.url == "/" %} class="active"{% endif %}>Home</a>
+          <a href="{{ '/news/' | relative_url }}"{% if page.url contains "/news" %} class="active"{% endif %}>News</a>
           <a href="{{ '/research/' | relative_url }}"{% if page.url contains "/research" %} class="active"{% endif %}>Research</a>
           <a href="{{ '/people/' | relative_url }}"{% if page.url contains "/people" %} class="active"{% endif %}>People</a>
           <a href="{{ '/publications/' | relative_url }}"{% if page.url contains "/publications" %} class="active"{% endif %}>Publications</a>
