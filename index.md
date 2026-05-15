@@ -23,12 +23,26 @@ Visit the [Research](/research/) page for more detail.
 
 ## News
 
-<!-- Add recent news items here, for example:
-- **March 2026** — New paper accepted in *ACS Catalysis*
-- **January 2026** — Welcome to new PhD student Jane Doe!
--->
+{% if site.data.news.size > 0 %}
+{% assign sorted_news = site.data.news | sort: "date" | reverse %}
+<ul class="news-list">
+{% for item in sorted_news limit: 3 %}
+  <li class="news-item">
+    <span class="news-date">{{ item.date | date: "%b %-d, %Y" }}</span>
+    <div class="news-body">
+      {{ item.body | markdownify }}
+      {% if item.link and item.link != "" %}
+      <a href="{{ item.link }}" target="_blank" rel="noopener">&rarr;</a>
+      {% endif %}
+    </div>
+  </li>
+{% endfor %}
+</ul>
 
+[See all news &rarr;](/news/)
+{% else %}
 *News coming soon.*
+{% endif %}
 
 ---
 
