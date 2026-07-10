@@ -27,6 +27,9 @@ description: "News and announcements from the Kreitz Research Group"
       {% if item.link and item.link != "" %}
       <a href="{{ item.link }}" target="_blank" rel="noopener">&rarr;</a>
       {% endif %}
+      {% if item.image and item.image != "" %}
+      <img class="news-image" src="{{ '/assets/images/news/' | append: item.image | relative_url }}" alt="{{ item.image_alt | default: '' }}">
+      {% endif %}
     </div>
   </li>
     {% if forloop.last %}

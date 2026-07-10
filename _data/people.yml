@@ -56,21 +56,21 @@
   linkedin: ""
   cv_url: ""
 
-- id: suhde-makki
-  name: "Suhde (Shohda) Makki"
-  role: "Ph.D. Student"
-  status: current
-  type: graduate
-  photo: "suhde-makki.png"
-  education: "B.Sc. Chemical Engineering, Qatar University (2022); M.Sc. Chemical Engineering, Texas A&M University at Qatar (2024)"
-  info: "Shohda is a 2nd year Ph.D. student in Chemical Engineering. She earned her BSc in Chemical Engineering from Qatar University in 2022 and her MSc in Chemical Engineering from Texas A&M University at Qatar in 2024. Her research focuses on multi-scale modeling of polyethylene  hydrogenolysis, with the goal of enabling catalytic plastic upcycling by converting waste polymers into more valuable chemicals. In her free time, she enjoys sports, spending time in nature, and spending time with family."
-  year_joined: 2024
-  current_position: ""
-  email: ""
-  github: ""
-  google_scholar: ""
-  linkedin: ""
-  cv_url: ""
+# - id: suhde-makki
+#   name: "Suhde (Shohda) Makki"
+#   role: "Ph.D. Student"
+#   status: current
+#   type: graduate
+#   photo: "suhde-makki.png"
+#   education: "B.Sc. Chemical Engineering, Qatar University (2022); M.Sc. Chemical Engineering, Texas A&M University at Qatar (2024)"
+#   info: "Shohda is a 2nd year Ph.D. student in Chemical Engineering. She earned her BSc in Chemical Engineering from Qatar University in 2022 and her MSc in Chemical Engineering from Texas A&M University at Qatar in 2024. Her research focuses on multi-scale modeling of polyethylene  hydrogenolysis, with the goal of enabling catalytic plastic upcycling by converting waste polymers into more valuable chemicals. In her free time, she enjoys sports, spending time in nature, and spending time with family."
+#   year_joined: 2024
+#   current_position: ""
+#   email: ""
+#   github: ""
+#   google_scholar: ""
+#   linkedin: ""
+#   cv_url: ""
 
 - id: conor-obrien
   name: "Conor O'Brien"

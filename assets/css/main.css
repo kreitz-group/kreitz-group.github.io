@@ -493,6 +493,15 @@ pre code {
   display: inline;
 }
 
+.news-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-top: 0.6em;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+}
+
 /* ----------------------------------------------------------
    Photos page
    ---------------------------------------------------------- */

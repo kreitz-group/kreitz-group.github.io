@@ -6,7 +6,14 @@
 #   date  — ISO date (YYYY-MM-DD). Required. Used for sorting and grouping.
 #   body  — Required. Inline Markdown works (links, **bold**, etc.).
 #   link  — Optional. If set, a small "→" link appears after the body.
+#   image — Optional. Filename inside assets/images/news/.
+#   image_alt — Optional. Alt text for the image.
 
+
+- date: 2026-06-15
+  body: "Seth Porter passed his Ph.D. Thesis Proposal. Congratulations, Seth!"
+  image: "20260615_SethThesisProposal.jpeg"
+  image_alt: "Seth Porter after passing his Ph.D. Thesis Proposal"
 
 - date: 2026-03-10
   body: "Bjarne joined the [Southeastern Catalysis Society (SECS)](https://secatsoc.wordpress.com/home/) and will serve as Secretary for the next year"
