@@ -4,7 +4,18 @@ title: Home
 description: "Computational chemistry research at Georgia Institute of Technology"
 ---
 
+<!-- The masthead already shows the group name, so the page title is not
+     repeated visually. It stays in the markup, first and readable by screen
+     readers and search engines, so the page still has an h1 and the heading
+     order does not jump straight to h2. -->
 # Kreitz Research Group
+{: .visually-hidden}
+
+<figure class="hero-figure">
+  <img src="{{ '/assets/images/home/group-hero.jpg' | relative_url }}"
+       alt="The Kreitz research group photographed together on the Georgia Tech campus, spring 2026."
+       width="1800" height="1206">
+</figure>
 
 We are a computational and experimental catalysis research group at the [School of Chemical & Biomolecular Engineering](https://chbe.gatech.edu) at Georgia Tech. Our work combines quantum chemistry, multiscale modeling, and kinetic experiments to unravel the detailed chemical kinetics of complex heterogeneously catalyzed reactions.
 {: .lede}

@@ -14,53 +14,54 @@
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to main content</a>
-    <div class="page">
 
-      <aside class="sidebar">
-        {% if site.pi.photo and site.pi.photo != "" %}
-        <img src="{{ '/assets/images/people/' | append: site.pi.photo | relative_url }}"
-             alt="{{ site.pi.name }}"
-             class="profile-photo">
-        {% else %}
-        <div class="profile-photo profile-placeholder" aria-hidden="true">👤</div>
-        {% endif %}
+    <header class="masthead">
+      <div class="wrap masthead-inner">
+        <a href="{{ '/' | relative_url }}" class="wordmark">{{ site.title }}</a>
+        <p class="masthead-affil">
+          <span class="affil-part">{{ site.pi.department }}</span><span class="affil-sep" aria-hidden="true"> · </span><span class="affil-part">{{ site.pi.institution }}</span>
+        </p>
+      </div>
+    </header>
 
-        <div class="sidebar-name">{{ site.pi.name }}</div>
-        <div class="sidebar-meta">{{ site.pi.title }}</div>
-        <div class="sidebar-meta">{{ site.pi.department }}</div>
-        <div class="sidebar-meta">{{ site.pi.institution }}</div>
+    <nav class="site-nav" aria-label="Main">
+      <div class="wrap site-nav-inner">
+        <a href="{{ '/' | relative_url }}"{% if page.url == "/" %} class="active" aria-current="page"{% endif %}>Home</a>
+        <a href="{{ '/news/' | relative_url }}"{% if page.url contains "/news" %} class="active" aria-current="page"{% endif %}>News</a>
+        <a href="{{ '/research/' | relative_url }}"{% if page.url contains "/research" %} class="active" aria-current="page"{% endif %}>Research</a>
+        <a href="{{ '/people/' | relative_url }}"{% if page.url contains "/people" %} class="active" aria-current="page"{% endif %}>People</a>
+        <a href="{{ '/photos/' | relative_url }}"{% if page.url contains "/photos" %} class="active" aria-current="page"{% endif %}>Photos</a>
+        <a href="{{ '/publications/' | relative_url }}"{% if page.url contains "/publications" %} class="active" aria-current="page"{% endif %}>Publications</a>
+        <a href="{{ '/tools/' | relative_url }}"{% if page.url contains "/tools" %} class="active" aria-current="page"{% endif %}>Tools</a>
+        <a href="{{ '/join/' | relative_url }}"{% if page.url contains "/join" %} class="active" aria-current="page"{% endif %}>Join</a>
+      </div>
+    </nav>
 
-        <nav class="sidebar-nav" aria-label="Main">
-          <a href="{{ '/' | relative_url }}"{% if page.url == "/" %} class="active" aria-current="page"{% endif %}>Home</a>
-          <a href="{{ '/news/' | relative_url }}"{% if page.url contains "/news" %} class="active" aria-current="page"{% endif %}>News</a>
-          <a href="{{ '/research/' | relative_url }}"{% if page.url contains "/research" %} class="active" aria-current="page"{% endif %}>Research</a>
-          <a href="{{ '/people/' | relative_url }}"{% if page.url contains "/people" %} class="active" aria-current="page"{% endif %}>People</a>
-          <a href="{{ '/photos/' | relative_url }}"{% if page.url contains "/photos" %} class="active" aria-current="page"{% endif %}>Photos</a>
-          <a href="{{ '/publications/' | relative_url }}"{% if page.url contains "/publications" %} class="active" aria-current="page"{% endif %}>Publications</a>
-          <a href="{{ '/tools/' | relative_url }}"{% if page.url contains "/tools" %} class="active" aria-current="page"{% endif %}>Tools</a>
-          <a href="{{ '/join/' | relative_url }}"{% if page.url contains "/join" %} class="active" aria-current="page"{% endif %}>Join</a>
-        </nav>
+    <main class="content wrap{% if page.url == "/" %} content-full{% endif %}" id="main">
+      {{ content }}
+    </main>
 
-        <div class="sidebar-links">
+    <footer class="site-footer">
+      <div class="wrap site-footer-inner">
+        <div class="footer-identity">
+          <span class="footer-name">{{ site.pi.name }}</span>
+          <span class="footer-title">{{ site.pi.title }}, {{ site.pi.institution }}</span>
+        </div>
+        <div class="footer-links">
           {% if site.pi.email and site.pi.email != "" %}
-          <a href="mailto:{{ site.pi.email }}" class="sidebar-icon">Email<span class="visually-hidden"> {{ site.pi.name }}</span></a>
+          <a href="mailto:{{ site.pi.email }}">{{ site.pi.email }}</a>
           {% endif %}
           {% if site.pi.google_scholar and site.pi.google_scholar != "" %}
-          <a href="{{ site.pi.google_scholar }}" class="sidebar-icon" target="_blank" rel="noopener">Scholar<span class="visually-hidden"> profile (opens in a new tab)</span></a>
+          <a href="{{ site.pi.google_scholar }}" target="_blank" rel="noopener">Scholar<span class="visually-hidden"> profile (opens in a new tab)</span></a>
           {% endif %}
           {% if site.pi.orcid and site.pi.orcid != "" %}
-          <a href="https://orcid.org/{{ site.pi.orcid }}" class="sidebar-icon" target="_blank" rel="noopener">ORCID<span class="visually-hidden"> profile (opens in a new tab)</span></a>
+          <a href="https://orcid.org/{{ site.pi.orcid }}" target="_blank" rel="noopener">ORCID<span class="visually-hidden"> profile (opens in a new tab)</span></a>
           {% endif %}
           {% if site.pi.github and site.pi.github != "" %}
-          <a href="{{ site.pi.github }}" class="sidebar-icon" target="_blank" rel="noopener">GitHub<span class="visually-hidden"> profile (opens in a new tab)</span></a>
+          <a href="{{ site.pi.github }}" target="_blank" rel="noopener">GitHub<span class="visually-hidden"> profile (opens in a new tab)</span></a>
           {% endif %}
         </div>
-      </aside>
-
-      <main class="content" id="main">
-        {{ content }}
-      </main>
-
-    </div>
+      </div>
+    </footer>
   </body>
 </html>

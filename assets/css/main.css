@@ -16,7 +16,6 @@
    Design tokens — light mode
    ---------------------------------------------------------- */
 :root {
-  --sidebar-width: 15em;
   /* The column stays wide for figures, publication rows and card grids. */
   --content-max-width: 52em;
   /* Running prose is held to a shorter measure — the full 52em column is
@@ -52,10 +51,6 @@
   --tag-bg:   #e7eef5;
   --tag-text: #2c4a66;
 
-  /* Signature: one tile of a potential energy surface — initial state,
-     adsorption, barrier, product, desorption, back to the initial level.
-     Tiled horizontally because a catalytic cycle turns over. */
-  --pes-tile: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='104' height='26' viewBox='0 0 104 26' fill='none' stroke='%23a8894c' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M0 13H14L20 19H38L48 6L58 19H76L82 13H104'/%3E%3C/svg%3E");
 }
 
 @media (prefers-color-scheme: dark) {
@@ -71,8 +66,6 @@
     --hover-bg: #1b232d;
     --tag-bg:   #1b2836;
     --tag-text: #b8cde0;
-
-    --pes-tile: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='104' height='26' viewBox='0 0 104 26' fill='none' stroke='%23c9a86a' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M0 13H14L20 19H38L48 6L58 19H76L82 13H104'/%3E%3C/svg%3E");
   }
 }
 
@@ -118,7 +111,7 @@ img {
   border: 0;
 }
 
-/* WCAG 2.4.1 — lets keyboard users jump past the sidebar nav. */
+/* WCAG 2.4.1 — lets keyboard users jump past the nav. */
 .skip-link {
   position: absolute;
   top: -100em;
@@ -169,20 +162,6 @@ h1 {
   margin-bottom: 0.5em;
 }
 
-/* The signature mark. Sits under the page title only. */
-h1::after {
-  content: "";
-  display: block;
-  /* Exactly two tile widths, so the cycle never ends mid-barrier. */
-  width: 13rem;
-  max-width: 100%;
-  height: 1.625rem;
-  margin-top: 0.35em;
-  background-image: var(--pes-tile);
-  background-repeat: repeat-x;
-  background-position: left center;
-  background-size: 6.5rem 1.625rem;
-}
 
 h2 {
   font-size: var(--font-h2);
@@ -274,137 +253,171 @@ pre code {
 }
 
 /* ----------------------------------------------------------
-   Page layout: sidebar + content
+   Page layout: masthead + single centered column
+
+   One shared .wrap sets the column, so the wordmark, the nav
+   links, the page content and the footer all align on the
+   same left edge. Bands (nav, footer) span the full viewport
+   while their contents stay on that column.
    ---------------------------------------------------------- */
-.page {
-  display: flex;
-  flex-direction: row;
-  padding: 3.5em 3em;
-  gap: 4em;
-  align-items: flex-start;
+.wrap {
+  /* Padding is inside the max-width (global border-box), so the
+     inner column measures --content-max-width exactly. */
+  max-width: calc(var(--content-max-width) + 3em);
+  margin: 0 auto;
+  padding: 0 1.5em;
 }
 
 /* ----------------------------------------------------------
-   Sidebar
+   Masthead
    ---------------------------------------------------------- */
-.sidebar {
-  flex: 0 0 var(--sidebar-width);
-  position: sticky;
-  top: 1.5em;
-  align-self: flex-start;
+.masthead {
+  padding: 2.5em 0 1.5em;
 }
 
-.profile-photo {
-  width: 100%;
-  max-width: 10em;
-  border-radius: 0.25em;
-  margin-bottom: 1em;
-  display: block;
-}
-
-.profile-placeholder {
-  width: 8em;
-  height: 8em;
-  background: var(--surface);
+.masthead-inner {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3em;
-  border-radius: 0.25em;
-  margin-bottom: 1em;
-  color: var(--muted);
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35em 1.5em;
 }
 
-.sidebar-name {
+.wordmark {
   font-family: var(--face-display);
   font-weight: 600;
-  font-size: 1.3125rem;
-  letter-spacing: -0.017em;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
   line-height: 1.2;
   color: var(--heading);
-  margin-bottom: 0.5em;
+  text-decoration: none;
 }
 
-/* Sans, not mono — a wrapping multi-line affiliation set in monospace
-   reads like a code comment. Mono is reserved for actual data. */
-.sidebar-meta {
+.wordmark:hover {
+  text-decoration: none;
+  color: var(--link);
+}
+
+.masthead-affil {
   font-family: var(--face-display);
   font-size: var(--font-sm);
-  font-weight: 400;
   color: var(--muted);
-  line-height: 1.4;
+  margin: 0;
 }
 
-.sidebar-nav {
-  margin-top: 1.75em;
+/* ----------------------------------------------------------
+   Main navigation — a full-width band that sticks to the top
+   once the masthead has scrolled away.
+   ---------------------------------------------------------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-nav-inner {
   display: flex;
-  flex-direction: column;
-  gap: 0.1em;
+  flex-wrap: wrap;
+  gap: 0 1.5em;
 }
 
-.sidebar-nav a {
-  display: block;
-  padding: 0.25em 0.6em;
-  /* Every item carries the indicator width so the active one
-     does not shift its neighbours. */
-  border-left: 2px solid transparent;
+.site-nav a {
   font-family: var(--face-display);
   font-size: var(--font-sm);
-  font-weight: 400;
   color: var(--text);
   text-decoration: none;
-  transition: background-color 0.12s ease;
+  padding: 0.7em 0;
+  /* Every item reserves the indicator so the active one does not
+     shift its neighbours. */
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
 }
 
-.sidebar-nav a:hover {
-  background: var(--hover-bg);
+.site-nav a:hover {
+  color: var(--link);
   text-decoration: none;
+  border-bottom-color: var(--border);
 }
 
 /* Two cues, not colour alone (WCAG 1.4.1): a rule and added weight. */
-.sidebar-nav a.active {
+.site-nav a.active {
   font-weight: 600;
   color: var(--heading);
-  border-left-color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
-/* Two columns so four destinations do not cost four lines. */
-.sidebar-links {
-  margin-top: 1.75em;
-  padding-top: 1.25em;
+/* ----------------------------------------------------------
+   Homepage opening image
+   ---------------------------------------------------------- */
+.hero-figure {
+  margin: 0 0 2em;
+}
+
+/* The group stands full-height in the frame, so this crops only the
+   excess sky above their heads (and the shoes) — anything more
+   aggressive would cut faces. */
+.hero-figure img {
+  display: block;
+  width: 100%;
+  /* height:auto is required — the img carries a height attribute, and with
+     both dimensions definite the aspect-ratio below would be ignored. */
+  height: auto;
+  aspect-ratio: 1.85;
+  object-fit: cover;
+  object-position: center 32%;
+  border-radius: 0.25em;
+}
+
+/* ----------------------------------------------------------
+   Footer
+   ---------------------------------------------------------- */
+.site-footer {
+  margin-top: 5em;
+  padding: 2em 0 3em;
   border-top: 1px solid var(--border);
-  display: grid;
-  /* max-content, not 1fr — equal fractions push the labels to opposite
-     edges of the sidebar and they stop reading as one group. */
-  grid-template-columns: repeat(2, max-content);
-  gap: 0.45em 1.5em;
 }
 
-/* Real text labels rather than emoji, which render differently on
-   every platform and read inconsistently next to word labels. */
-.sidebar-icon {
+.site-footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75em 2em;
+  font-size: var(--font-sm);
+}
+
+.footer-identity {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-name {
+  font-family: var(--face-display);
+  font-weight: 600;
+  color: var(--heading);
+}
+
+.footer-title {
+  color: var(--muted);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35em 1.25em;
   font-family: var(--face-mono);
   font-size: var(--font-xs);
-  letter-spacing: 0.02em;
-  color: var(--muted);
-  text-decoration: none;
-  width: fit-content;
-}
-
-.sidebar-icon:hover {
-  color: var(--link);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.2em;
+  align-items: flex-start;
 }
 
 /* ----------------------------------------------------------
    Main content
    ---------------------------------------------------------- */
 .content {
-  flex: 1;
-  max-width: var(--content-max-width);
-  min-width: 0;
+  /* Width comes from .wrap; nothing here but vertical rhythm. */
+  padding-top: 2.5em;
 }
 
 /* First heading on a page should not add its own top gap. */
@@ -424,6 +437,18 @@ pre code {
 
 .content > .lede {
   max-width: 30em;
+}
+
+/* Homepage: text runs to the full column so it lines up with the group
+   photo above it. The measure cap is dropped here because this page is
+   short and scannable — a lede, three bullets and the news list, which
+   already spans the full width. Long-prose pages keep the cap. */
+.content-full > p,
+.content-full > ul,
+.content-full > ol,
+.content-full > blockquote,
+.content-full > .lede {
+  max-width: none;
 }
 
 /* ----------------------------------------------------------
@@ -844,7 +869,10 @@ pre code {
   color: var(--link);
   text-decoration: none;
   white-space: nowrap;
-  transition: background-color 0.12s ease;
+  /* Deliberately no transition on background-color. Chrome will not
+     re-evaluate a transitioned property when the custom property behind
+     its value changes, so a transition here leaves the button background
+     stale when the reader switches OS light/dark with the page open. */
 }
 
 .btn:hover {
@@ -861,49 +889,50 @@ pre code {
     --font-h1: 1.75rem;
   }
 
-  .page {
+  .wrap {
+    padding: 0 1.25em;
+  }
+
+  .masthead {
+    padding: 1.75em 0 1.25em;
+  }
+
+  .wordmark {
+    font-size: 1.3125rem;
+  }
+
+  /* Wordmark and affiliation stack rather than sitting on one baseline. */
+  .masthead-inner {
     flex-direction: column;
-    padding: 1.5em 1.25em;
-    gap: 2em;
+    align-items: flex-start;
   }
 
-  .sidebar {
+  /* Department and institution get their own lines; otherwise the middle
+     dot wraps to the head of the second line. */
+  .affil-part {
+    display: block;
+  }
+
+  .affil-sep {
+    display: none;
+  }
+
+  /* Not sticky on small screens — eight wrapped links would eat most
+     of a phone viewport. */
+  .site-nav {
     position: static;
-    flex: none;
-    width: 100%;
   }
 
-  .profile-photo {
-    max-width: 7em;
+  .site-nav-inner {
+    gap: 0 1.1em;
   }
 
-  .sidebar-nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.35em;
-  }
-
-  .sidebar-nav a {
-    padding: 0.3em 0.7em;
-    border: 1px solid var(--border);
-    border-radius: 0.2em;
-  }
-
-  .sidebar-nav a.active {
-    border-color: var(--accent);
-  }
-
-  /* display must be reset — the base rule is grid, so flex-direction
-     alone would be ignored here. */
-  .sidebar-links {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.35em 1.25em;
+  .site-nav a {
+    padding: 0.5em 0;
   }
 
   .content {
-    max-width: 100%;
+    padding-top: 1.75em;
   }
 
   .research-figure {
