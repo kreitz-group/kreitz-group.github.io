@@ -1,39 +1,78 @@
 /* ==========================================================
    Kreitz Research Group — main.css
-   Design adapted from niemeyer-research-group.github.io
+
+   Type system (three roles):
+     Instrument Sans — headings, names, UI labels
+     Source Serif 4  — body prose
+     IBM Plex Mono   — metadata: dates, venues, degrees, tags
+
+   Font sizes are rem so they scale with the reader's browser
+   font-size setting (WCAG 1.4.4). line-height values are
+   unitless so small text does not inherit an oversized
+   computed line-height (WCAG 1.4.12).
    ========================================================== */
 
 /* ----------------------------------------------------------
-   CSS variables (light mode)
+   Design tokens — light mode
    ---------------------------------------------------------- */
 :root {
   --sidebar-width: 15em;
+  /* The column stays wide for figures, publication rows and card grids. */
   --content-max-width: 52em;
-  /* Sizes are rem, not pt, so they scale with the reader's browser font-size
-     setting (WCAG 1.4.4). Converted at rem = pt / 12, which renders identically
-     to the previous pt values at the default 16px root size. */
-  --font-small: 1rem;      /* was 12pt */
-  --font-body: 1.1667rem;  /* was 14pt */
-  --font-h1: 1.6667rem;    /* was 20pt */
+  /* Running prose is held to a shorter measure — the full 52em column is
+     roughly 105 characters per line, well past a comfortable ~65-75. */
+  --measure: 36em;
 
-  --bg:         #ffffff;
-  --text:       #000000;
-  --link:       #0000b8;
-  --muted:      #555555;
-  --border:     #e8e8e8;
-  --hover-bg:   #f5f5f5;
-  --tag-bg:     #eaeaff;
+  /* Type scale. Steps are wide enough that each level outranks
+     the next by size alone, without needing a rule or a color. */
+  --font-xs:   0.8125rem;  /* 13px — mono metadata */
+  --font-sm:   0.9375rem;  /* 15px */
+  --font-body: 1.0625rem;  /* 17px */
+  --font-h4:   1rem;
+  --font-h3:   1.1875rem;
+  --font-h2:   1.4375rem;
+  --font-h1:   2.125rem;
+
+  --face-display: 'Instrument Sans', system-ui, sans-serif;
+  --face-body:    'Source Serif 4', Georgia, serif;
+  --face-mono:    'IBM Plex Mono', ui-monospace, monospace;
+
+  /* Georgia Tech navy and a deepened Tech Gold. The published
+     Tech Gold (#b3a369) sits at 2.2:1 on white, too low even for
+     graphics, so the accent is darkened to clear 3:1 (WCAG 1.4.11). */
+  --bg:       #ffffff;
+  --surface:  #f5f7f9;
+  --text:     #11181f;
+  --heading:  #003057;
+  --accent:   #a8894c;
+  --link:     #00447c;
+  --muted:    #55606c;
+  --border:   #dfe4e9;
+  --hover-bg: #eef2f6;
+  --tag-bg:   #e7eef5;
+  --tag-text: #2c4a66;
+
+  /* Signature: one tile of a potential energy surface — initial state,
+     adsorption, barrier, product, desorption, back to the initial level.
+     Tiled horizontally because a catalytic cycle turns over. */
+  --pes-tile: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='104' height='26' viewBox='0 0 104 26' fill='none' stroke='%23a8894c' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M0 13H14L20 19H38L48 6L58 19H76L82 13H104'/%3E%3C/svg%3E");
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg:       #000000;
-    --text:     #fefefe;
-    --link:     #a2a2ff;
-    --muted:    #aaaaaa;
-    --border:   #323232;
-    --hover-bg: #1a1a1a;
-    --tag-bg:   #23235a;
+    --bg:       #0d1218;
+    --surface:  #161d26;
+    --text:     #e8edf2;
+    --heading:  #dce6f0;
+    --accent:   #c9a86a;
+    --link:     #8fbce8;
+    --muted:    #9aa7b4;
+    --border:   #232c36;
+    --hover-bg: #1b232d;
+    --tag-bg:   #1b2836;
+    --tag-text: #b8cde0;
+
+    --pes-tile: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='104' height='26' viewBox='0 0 104 26' fill='none' stroke='%23c9a86a' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M0 13H14L20 19H38L48 6L58 19H76L82 13H104'/%3E%3C/svg%3E");
   }
 }
 
@@ -47,14 +86,19 @@
 }
 
 body {
-  font-family: 'Nunito Sans', sans-serif;
-  font-weight: 300;
+  font-family: var(--face-body);
+  font-weight: 400;
   font-size: var(--font-body);
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--text);
   background: var(--bg);
   max-width: 92em;
   margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
 }
 
 /* ----------------------------------------------------------
@@ -81,6 +125,8 @@ body {
   left: 0.5em;
   z-index: 100;
   padding: 0.5em 1em;
+  font-family: var(--face-mono);
+  font-size: var(--font-xs);
   background: var(--bg);
   color: var(--link);
   border: 2px solid var(--link);
@@ -99,70 +145,132 @@ body {
   border-radius: 0.15em;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
 /* ----------------------------------------------------------
    Typography
    ---------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  line-height: 1.35;
+  font-family: var(--face-display);
+  color: var(--heading);
+  line-height: 1.25;
+  text-wrap: balance;
 }
 
-h1 { font-size: var(--font-h1); margin-bottom: 0.75em; }
-h2 { font-size: calc(var(--font-h1) - 0.25rem); margin-top: 2em; margin-bottom: 0.5em; padding-bottom: 0.25em; border-bottom: 1px solid var(--border); }
-h3 { font-size: calc(var(--font-h1) - 0.5rem); margin-top: 1.5em; margin-bottom: 0.25em; }
-h4 { font-size: calc(var(--font-h1) - 0.75rem); margin-top: 1em; }
+h1 {
+  font-size: var(--font-h1);
+  font-weight: 600;
+  letter-spacing: -0.021em;
+  margin-bottom: 0.5em;
+}
+
+/* The signature mark. Sits under the page title only. */
+h1::after {
+  content: "";
+  display: block;
+  /* Exactly two tile widths, so the cycle never ends mid-barrier. */
+  width: 13rem;
+  max-width: 100%;
+  height: 1.625rem;
+  margin-top: 0.35em;
+  background-image: var(--pes-tile);
+  background-repeat: repeat-x;
+  background-position: left center;
+  background-size: 6.5rem 1.625rem;
+}
+
+h2 {
+  font-size: var(--font-h2);
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  margin-top: 2.25em;
+  margin-bottom: 0.6em;
+}
+
+h3 {
+  font-size: var(--font-h3);
+  font-weight: 600;
+  margin-top: 1.75em;
+  margin-bottom: 0.3em;
+}
+
+h4 {
+  font-size: var(--font-h4);
+  font-weight: 600;
+  margin-top: 1.25em;
+  margin-bottom: 0.2em;
+}
 
 a {
   color: var(--link);
-  text-decoration: none;
-}
-a:hover {
   text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
 }
 
 p { margin-bottom: 1em; }
+
+/* Opening paragraph of a page — carries the thesis. */
+.lede {
+  font-size: 1.375rem;
+  line-height: 1.45;
+  color: var(--text);
+  margin-bottom: 1.25em;
+}
 
 ul, ol {
   margin-left: 1.5em;
   margin-bottom: 1em;
 }
-li { margin-bottom: 0.25em; }
+li { margin-bottom: 0.35em; }
+
+strong { font-weight: 600; }
 
 hr {
   border: none;
   border-top: 1px solid var(--border);
-  margin: 2em 0;
+  margin: 2.5em 0;
 }
 
 blockquote {
-  border-left: 3px solid var(--border);
+  border-left: 2px solid var(--accent);
   padding-left: 1em;
   color: var(--muted);
-  font-style: italic;
   margin: 1em 0;
 }
 
 code {
-  font-family: monospace;
-  font-size: var(--font-small);
-  background: var(--hover-bg);
+  font-family: var(--face-mono);
+  font-size: 0.9em;
+  background: var(--surface);
   padding: 0.1em 0.3em;
   border-radius: 0.2em;
 }
 
 pre {
-  background: var(--hover-bg);
+  font-family: var(--face-mono);
+  background: var(--surface);
+  border: 1px solid var(--border);
   padding: 1em;
   border-radius: 0.25em;
   overflow-x: auto;
   margin-bottom: 1em;
-  font-size: var(--font-small);
+  font-size: var(--font-sm);
 }
 
 pre code {
   background: none;
   padding: 0;
+  font-size: inherit;
 }
 
 /* ----------------------------------------------------------
@@ -171,8 +279,8 @@ pre code {
 .page {
   display: flex;
   flex-direction: row;
-  padding: 3em;
-  gap: 3em;
+  padding: 3.5em 3em;
+  gap: 4em;
   align-items: flex-start;
 }
 
@@ -182,7 +290,7 @@ pre code {
 .sidebar {
   flex: 0 0 var(--sidebar-width);
   position: sticky;
-  top: 1em;
+  top: 1.5em;
   align-self: flex-start;
 }
 
@@ -190,51 +298,62 @@ pre code {
   width: 100%;
   max-width: 10em;
   border-radius: 0.25em;
-  margin-bottom: 0.75em;
+  margin-bottom: 1em;
   display: block;
 }
 
 .profile-placeholder {
   width: 8em;
   height: 8em;
-  background: var(--hover-bg);
+  background: var(--surface);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 3em;
   border-radius: 0.25em;
-  margin-bottom: 0.75em;
+  margin-bottom: 1em;
   color: var(--muted);
 }
 
 .sidebar-name {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 1.4167rem;
-  line-height: 1.3;
-  margin-bottom: 0.3em;
+  font-family: var(--face-display);
+  font-weight: 600;
+  font-size: 1.3125rem;
+  letter-spacing: -0.017em;
+  line-height: 1.2;
+  color: var(--heading);
+  margin-bottom: 0.5em;
 }
 
+/* Sans, not mono — a wrapping multi-line affiliation set in monospace
+   reads like a code comment. Mono is reserved for actual data. */
 .sidebar-meta {
-  font-size: var(--font-small);
+  font-family: var(--face-display);
+  font-size: var(--font-sm);
+  font-weight: 400;
   color: var(--muted);
   line-height: 1.4;
 }
 
 .sidebar-nav {
-  margin-top: 1.25em;
+  margin-top: 1.75em;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 0.1em;
 }
 
 .sidebar-nav a {
   display: block;
-  padding: 0.2em 0.5em;
+  padding: 0.25em 0.6em;
+  /* Every item carries the indicator width so the active one
+     does not shift its neighbours. */
+  border-left: 2px solid transparent;
+  font-family: var(--face-display);
+  font-size: var(--font-sm);
+  font-weight: 400;
   color: var(--text);
   text-decoration: none;
-  border-radius: 0.25em;
-  font-size: var(--font-body);
+  transition: background-color 0.12s ease;
 }
 
 .sidebar-nav a:hover {
@@ -242,27 +361,41 @@ pre code {
   text-decoration: none;
 }
 
+/* Two cues, not colour alone (WCAG 1.4.1): a rule and added weight. */
 .sidebar-nav a.active {
   font-weight: 600;
+  color: var(--heading);
+  border-left-color: var(--accent);
 }
 
+/* Two columns so four destinations do not cost four lines. */
 .sidebar-links {
-  margin-top: 1em;
-  display: flex;
-  gap: 0.75em;
-  flex-wrap: wrap;
-  align-items: center;
+  margin-top: 1.75em;
+  padding-top: 1.25em;
+  border-top: 1px solid var(--border);
+  display: grid;
+  /* max-content, not 1fr — equal fractions push the labels to opposite
+     edges of the sidebar and they stop reading as one group. */
+  grid-template-columns: repeat(2, max-content);
+  gap: 0.45em 1.5em;
 }
 
+/* Real text labels rather than emoji, which render differently on
+   every platform and read inconsistently next to word labels. */
 .sidebar-icon {
-  font-size: 1.1em;
+  font-family: var(--face-mono);
+  font-size: var(--font-xs);
+  letter-spacing: 0.02em;
   color: var(--muted);
   text-decoration: none;
+  width: fit-content;
 }
 
 .sidebar-icon:hover {
   color: var(--link);
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
 }
 
 /* ----------------------------------------------------------
@@ -271,8 +404,26 @@ pre code {
 .content {
   flex: 1;
   max-width: var(--content-max-width);
-  margin-top: 10em;
   min-width: 0;
+}
+
+/* First heading on a page should not add its own top gap. */
+.content > h1:first-child,
+.content > h2:first-child {
+  margin-top: 0;
+}
+
+/* Direct children only, so cards, news rows and abstracts — which set
+   their own widths — are left alone. */
+.content > p,
+.content > ul,
+.content > ol,
+.content > blockquote {
+  max-width: var(--measure);
+}
+
+.content > .lede {
+  max-width: 30em;
 }
 
 /* ----------------------------------------------------------
@@ -283,7 +434,7 @@ pre code {
 .pi-card {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 1.25em;
   margin: 1.5em 0 2em;
 }
 
@@ -305,19 +456,20 @@ pre code {
   margin-top: 0;
 }
 
-/* Person grid for current members */
+/* Person list for current members */
 .person-list {
   display: flex;
   flex-direction: column;
   gap: 0.75em;
-  margin: 1em 0;
+  margin: 1.25em 0;
 }
 
 .person-card {
   display: flex;
   flex-direction: row;
-  gap: 1em;
-  padding: 0.75em;
+  gap: 1.1em;
+  padding: 1em;
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 0.25em;
 }
@@ -345,22 +497,25 @@ pre code {
 
 .person-info {
   flex: 1;
+  min-width: 0;
 }
 
 .person-info h3 {
-  margin: 0 0 0.1em;
-  font-size: 1.1667rem;
+  margin: 0 0 0.15em;
+  font-size: var(--font-h4);
 }
 
+/* Not uppercased: it would render "Ph.D. Student" as "PH.D. STUDENT". */
 .person-role {
-  font-size: var(--font-small);
+  font-family: var(--face-mono);
+  font-size: var(--font-xs);
+  letter-spacing: 0.02em;
   color: var(--muted);
-  margin-bottom: 0.2em;
-  font-weight: 600;
+  margin-bottom: 0.4em;
 }
 
 .person-meta {
-  font-size: var(--font-small);
+  font-size: var(--font-sm);
   color: var(--muted);
   margin-bottom: 0.15em;
 }
@@ -369,38 +524,38 @@ pre code {
   display: flex;
   gap: 0.4em;
   flex-wrap: wrap;
-  margin-top: 0.5em;
+  margin-top: 0.6em;
 }
 
 /* Alumni grid */
 .alumni-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(13em, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(13em, 100%), 1fr));
   gap: 0.75em;
-  margin: 1em 0;
+  margin: 1.25em 0;
 }
 
 .alumni-card {
-  padding: 0.75em;
+  padding: 0.9em;
   border: 1px solid var(--border);
   border-radius: 0.25em;
 }
 
 .alumni-card h4 {
-  margin: 0 0 0.1em;
-  font-size: 1.0833rem;
+  margin: 0 0 0.15em;
+  font-size: var(--font-h4);
 }
 
 /* ----------------------------------------------------------
    Publications page
    ---------------------------------------------------------- */
 .pub-list {
-  margin: 1em 0;
+  margin: 1.25em 0;
 }
 
 .pub-entry {
   display: flex;
-  gap: 1em;
+  gap: 1.25em;
   margin-bottom: 1.5em;
   padding-bottom: 1.5em;
   border-bottom: 1px solid var(--border);
@@ -410,12 +565,24 @@ pre code {
   border-bottom: none;
 }
 
+/* Journal table-of-contents graphics arrive at every imaginable aspect
+   ratio. A fixed frame with the artwork contained inside keeps the rows
+   an even height instead of letting each image set its own. */
 .pub-thumb {
-  width: 15em;
-  height: auto;
-  border-radius: 0.25em;
+  width: 11em;
+  aspect-ratio: 4 / 3;
   flex-shrink: 0;
+  object-fit: contain;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 0.25em;
+  padding: 0.4em;
   align-self: flex-start;
+}
+
+.pub-thumb-empty {
+  background: var(--surface);
+  border-style: dashed;
 }
 
 .pub-body {
@@ -424,56 +591,64 @@ pre code {
 }
 
 .pub-title {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 1.0833rem;
-  line-height: 1.35;
-  margin-bottom: 0.2em;
+  font-family: var(--face-display);
+  font-weight: 600;
+  font-size: var(--font-h4);
+  line-height: 1.3;
+  letter-spacing: -0.008em;
+  margin-bottom: 0.3em;
 }
 
 .pub-title a {
-  color: var(--text);
+  color: var(--heading);
+  text-decoration: none;
 }
 
 .pub-title a:hover {
   color: var(--link);
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
 }
 
 .pub-authors {
-  font-size: var(--font-small);
+  font-size: var(--font-sm);
   color: var(--muted);
-  margin-bottom: 0.15em;
+  margin-bottom: 0.2em;
 }
 
 .pub-venue {
-  font-size: var(--font-small);
-  font-style: italic;
+  font-family: var(--face-mono);
+  font-size: var(--font-xs);
   color: var(--muted);
-  margin-bottom: 0.3em;
+  margin-bottom: 0.5em;
 }
 
 .pub-abstract {
-  font-size: var(--font-small);
+  font-size: var(--font-sm);
   color: var(--muted);
-  margin-bottom: 0.4em;
+  margin-bottom: 0.5em;
 }
 
 .pub-abstract > summary {
   cursor: pointer;
+  font-family: var(--face-mono);
+  font-size: var(--font-xs);
+  letter-spacing: 0.02em;
   color: var(--link);
   width: fit-content;
 }
 
 .pub-abstract > p {
-  margin: 0.35em 0 0;
+  margin: 0.5em 0 0;
+  line-height: 1.55;
 }
 
 .pub-links {
   display: flex;
   gap: 0.4em;
   flex-wrap: wrap;
-  margin-top: 0.4em;
+  margin-top: 0.5em;
 }
 
 /* ----------------------------------------------------------
@@ -482,7 +657,7 @@ pre code {
 .research-figure {
   float: right;
   max-width: 10cm;
-  margin: 0.25em 0 1em 1.5em;
+  margin: 0.25em 0 1em 1.75em;
   clear: both;
 }
 
@@ -495,10 +670,10 @@ pre code {
 }
 
 .research-figure figcaption {
-  margin-top: 0.5em;
-  font-size: var(--font-small);
+  margin-top: 0.6em;
+  font-size: var(--font-sm);
   color: var(--muted);
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 /* Ensure section dividers fall below floated figures */
@@ -511,14 +686,14 @@ pre code {
    ---------------------------------------------------------- */
 .news-list {
   list-style: none;
-  margin: 0 0 1em;
+  margin: 1.25em 0;
   padding: 0;
 }
 
 .news-item {
   display: flex;
-  gap: 1em;
-  padding: 0.6em 0;
+  gap: 1.5em;
+  padding: 0.8em 0;
   border-bottom: 1px solid var(--border);
 }
 
@@ -527,10 +702,12 @@ pre code {
 }
 
 .news-date {
-  flex: 0 0 5em;
+  /* Wide enough that "Sep 15, 2026" stays on one line in Plex Mono. */
+  flex: 0 0 7.5em;
+  font-family: var(--face-mono);
+  font-size: var(--font-xs);
   color: var(--muted);
-  font-size: var(--font-small);
-  padding-top: 0.15em;
+  padding-top: 0.3em;
 }
 
 .news-body {
@@ -550,7 +727,7 @@ pre code {
   height: auto;
   margin-top: 0.6em;
   border: 1px solid var(--border);
-  border-radius: 3px;
+  border-radius: 0.25em;
 }
 
 /* ----------------------------------------------------------
@@ -559,8 +736,8 @@ pre code {
 .photo-grid {
   display: flex;
   flex-direction: column;
-  gap: 2em;
-  margin: 1em 0;
+  gap: 2.5em;
+  margin: 1.25em 0;
 }
 
 .photo-item {
@@ -578,75 +755,101 @@ pre code {
 }
 
 .photo-caption {
-  margin-top: 0.4em;
-  font-size: var(--font-small);
+  margin-top: 0.6em;
+  font-size: var(--font-sm);
   color: var(--muted);
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .photo-date {
-  font-style: italic;
+  font-family: var(--face-mono);
+  font-size: var(--font-xs);
+  font-style: normal;
 }
 
 /* ----------------------------------------------------------
    Tools / repos page
    ---------------------------------------------------------- */
+/* auto-fit, not auto-fill: with only two tools, the cards should share
+   the row rather than huddle beside an empty third track. */
 .repo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(15em, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(16em, 100%), 1fr));
   gap: 1em;
-  margin: 1em 0;
+  margin: 1.25em 0;
 }
 
 .repo-card {
-  padding: 1em;
+  padding: 1.25em;
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 0.25em;
 }
 
 .repo-card h3 {
-  margin: 0 0 0.3em;
-  font-size: 1.1667rem;
+  margin: 0 0 0.35em;
+  font-size: var(--font-h4);
+}
+
+/* Card titles carry no rule — the card is already the affordance. */
+.repo-card h3 a {
+  color: var(--heading);
+  text-decoration: none;
+}
+
+.repo-card h3 a:hover {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
 }
 
 .repo-card p {
-  font-size: var(--font-small);
+  font-size: var(--font-sm);
   color: var(--muted);
-  margin-bottom: 0.5em;
+  margin-bottom: 0.75em;
 }
 
 /* ----------------------------------------------------------
-   Shared tag / pill style
+   Shared tag / button styles
    ---------------------------------------------------------- */
 .tag {
   display: inline-block;
-  font-size: 0.9167rem;
-  padding: 0.1em 0.5em;
-  border-radius: 0.25em;
+  font-family: var(--face-mono);
+  font-size: var(--font-xs);
+  letter-spacing: 0.03em;
+  padding: 0.15em 0.5em;
+  border-radius: 0.2em;
   background: var(--tag-bg);
-  color: var(--muted);
+  color: var(--tag-text);
   text-decoration: none;
   white-space: nowrap;
 }
 
 .tag:hover {
   text-decoration: none;
-  opacity: 0.8;
+  background: var(--hover-bg);
 }
 
+/* Not uppercased: it would flatten "arXiv" to "ARXIV". */
 .btn {
   display: inline-block;
-  font-size: 0.9167rem;
-  padding: 0.15em 0.6em;
-  border-radius: 0.25em;
-  border: 1px solid var(--muted);
-  color: var(--muted);
+  font-family: var(--face-mono);
+  font-size: var(--font-xs);
+  letter-spacing: 0.02em;
+  padding: 0.3em 0.65em;
+  border-radius: 0.2em;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--link);
   text-decoration: none;
   white-space: nowrap;
+  transition: background-color 0.12s ease;
 }
 
 .btn:hover {
   background: var(--hover-bg);
+  border-color: var(--muted);
   text-decoration: none;
 }
 
@@ -654,10 +857,14 @@ pre code {
    Responsive
    ---------------------------------------------------------- */
 @media (max-width: 800px) {
+  :root {
+    --font-h1: 1.75rem;
+  }
+
   .page {
     flex-direction: column;
-    padding: 1.25em;
-    gap: 1.5em;
+    padding: 1.5em 1.25em;
+    gap: 2em;
   }
 
   .sidebar {
@@ -673,16 +880,29 @@ pre code {
   .sidebar-nav {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 0.25em;
+    gap: 0.35em;
   }
 
   .sidebar-nav a {
-    padding: 0.2em 0.6em;
+    padding: 0.3em 0.7em;
     border: 1px solid var(--border);
+    border-radius: 0.2em;
+  }
+
+  .sidebar-nav a.active {
+    border-color: var(--accent);
+  }
+
+  /* display must be reset — the base rule is grid, so flex-direction
+     alone would be ignored here. */
+  .sidebar-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.35em 1.25em;
   }
 
   .content {
-    margin-top: 0;
     max-width: 100%;
   }
 
@@ -692,13 +912,23 @@ pre code {
     margin: 1.5em 0;
   }
 
-  /* WCAG 1.4.10 — the 15em thumbnail alone overflows a 320px viewport. */
+  /* WCAG 1.4.10 — the thumbnail alongside text overflows a narrow viewport. */
   .pub-entry {
     flex-direction: column;
   }
 
   .pub-thumb {
     width: 100%;
-    max-width: 20em;
+    max-width: 18em;
+  }
+
+  .news-item {
+    flex-direction: column;
+    gap: 0.2em;
+  }
+
+  .news-date {
+    flex: none;
+    padding-top: 0;
   }
 }

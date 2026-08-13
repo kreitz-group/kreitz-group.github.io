@@ -7,7 +7,7 @@
     <meta name="description" content="{{ page.description | default: site.description | strip_html | truncate: 160 }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,600;1,6..12,300;1,6..12,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     {% seo %}
     {% feed_meta %}
@@ -43,20 +43,16 @@
 
         <div class="sidebar-links">
           {% if site.pi.email and site.pi.email != "" %}
-          <a href="mailto:{{ site.pi.email }}" class="sidebar-icon">
-            <span aria-hidden="true">&#9993;</span><span class="visually-hidden">Email {{ site.pi.name }}</span>
-          </a>
-          {% endif %}
-          {% if site.pi.github and site.pi.github != "" %}
-          <a href="{{ site.pi.github }}" class="sidebar-icon" target="_blank" rel="noopener">
-            <span aria-hidden="true">&#128187;</span><span class="visually-hidden">GitHub (opens in a new tab)</span>
-          </a>
+          <a href="mailto:{{ site.pi.email }}" class="sidebar-icon">Email<span class="visually-hidden"> {{ site.pi.name }}</span></a>
           {% endif %}
           {% if site.pi.google_scholar and site.pi.google_scholar != "" %}
           <a href="{{ site.pi.google_scholar }}" class="sidebar-icon" target="_blank" rel="noopener">Scholar<span class="visually-hidden"> profile (opens in a new tab)</span></a>
           {% endif %}
           {% if site.pi.orcid and site.pi.orcid != "" %}
           <a href="https://orcid.org/{{ site.pi.orcid }}" class="sidebar-icon" target="_blank" rel="noopener">ORCID<span class="visually-hidden"> profile (opens in a new tab)</span></a>
+          {% endif %}
+          {% if site.pi.github and site.pi.github != "" %}
+          <a href="{{ site.pi.github }}" class="sidebar-icon" target="_blank" rel="noopener">GitHub<span class="visually-hidden"> profile (opens in a new tab)</span></a>
           {% endif %}
         </div>
       </aside>

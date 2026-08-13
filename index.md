@@ -7,6 +7,7 @@ description: "Computational chemistry research at Georgia Institute of Technolog
 # Kreitz Research Group
 
 We are a computational and experimental catalysis research group at the [School of Chemical & Biomolecular Engineering](https://chbe.gatech.edu) at Georgia Tech. Our work combines quantum chemistry, multiscale modeling, and kinetic experiments to unravel the detailed chemical kinetics of complex heterogeneously catalyzed reactions.
+{: .lede}
 
 ## Research Overview
 
