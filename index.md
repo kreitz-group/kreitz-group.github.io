@@ -6,9 +6,7 @@ description: "Computational chemistry research at Georgia Institute of Technolog
 
 # Kreitz Research Group
 
-We are a computational and experimental catalysis research group at the [School of Chemical & Biomolecular Engineering](https://chbe.gatech.edu) at Georgia Tech. Our work combines quantum chemistry, multiscale modeling, and kinetic experiments to unravels the detailed chemical kinetics of complex heterogeneously catalyzed reactions.
-
-<!-- TODO: Replace the paragraph above with your own group description. -->
+We are a computational and experimental catalysis research group at the [School of Chemical & Biomolecular Engineering](https://chbe.gatech.edu) at Georgia Tech. Our work combines quantum chemistry, multiscale modeling, and kinetic experiments to unravel the detailed chemical kinetics of complex heterogeneously catalyzed reactions.
 
 ## Research Overview
 
@@ -32,7 +30,7 @@ Visit the [Research](/research/) page for more detail.
     <div class="news-body">
       {{ item.body | markdownify }}
       {% if item.link and item.link != "" %}
-      <a href="{{ item.link }}" target="_blank" rel="noopener">&rarr;</a>
+      <a href="{{ item.link }}" target="_blank" rel="noopener"><span class="visually-hidden">Read more about: {{ item.body | markdownify | strip_html | strip_newlines | truncate: 70 }} (opens in a new tab)</span><span aria-hidden="true">&rarr;</span></a>
       {% endif %}
     </div>
   </li>

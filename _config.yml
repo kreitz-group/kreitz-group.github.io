@@ -35,6 +35,8 @@ exclude:
   - scripts/
   - Gemfile
   - README.md
+  - CLAUDE.md
+  - Literatur.bib
   - vendor/
   - .git/
   - "*.py"

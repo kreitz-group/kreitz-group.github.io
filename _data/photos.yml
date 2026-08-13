@@ -5,6 +5,9 @@
 #   image    — Required. Filename inside assets/images/photos/.
 #   caption  — Optional. Text shown below the image.
 #   date     — Optional. ISO date (YYYY-MM-DD); rendered as "MMM YYYY" if set.
+#   alt      — Optional. Alt text. Leave unset when `caption` already describes
+#              the image — the caption is read out anyway, so a duplicate alt
+#              makes screen readers announce it twice.
 #
 # Example entry — uncomment and edit once you've added the file:
 #

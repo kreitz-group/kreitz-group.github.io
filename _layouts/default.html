@@ -13,6 +13,7 @@
     {% feed_meta %}
   </head>
   <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
     <div class="page">
 
       <aside class="sidebar">
@@ -21,7 +22,7 @@
              alt="{{ site.pi.name }}"
              class="profile-photo">
         {% else %}
-        <div class="profile-photo profile-placeholder">👤</div>
+        <div class="profile-photo profile-placeholder" aria-hidden="true">👤</div>
         {% endif %}
 
         <div class="sidebar-name">{{ site.pi.name }}</div>
@@ -29,34 +30,38 @@
         <div class="sidebar-meta">{{ site.pi.department }}</div>
         <div class="sidebar-meta">{{ site.pi.institution }}</div>
 
-        <nav class="sidebar-nav">
-          <a href="{{ '/' | relative_url }}"{% if page.url == "/" %} class="active"{% endif %}>Home</a>
-          <a href="{{ '/news/' | relative_url }}"{% if page.url contains "/news" %} class="active"{% endif %}>News</a>
-          <a href="{{ '/research/' | relative_url }}"{% if page.url contains "/research" %} class="active"{% endif %}>Research</a>
-          <a href="{{ '/people/' | relative_url }}"{% if page.url contains "/people" %} class="active"{% endif %}>People</a>
-          <a href="{{ '/photos/' | relative_url }}"{% if page.url contains "/photos" %} class="active"{% endif %}>Photos</a>
-          <a href="{{ '/publications/' | relative_url }}"{% if page.url contains "/publications" %} class="active"{% endif %}>Publications</a>
-          <a href="{{ '/tools/' | relative_url }}"{% if page.url contains "/tools" %} class="active"{% endif %}>Tools</a>
-          <a href="{{ '/join/' | relative_url }}"{% if page.url contains "/join" %} class="active"{% endif %}>Join</a>
+        <nav class="sidebar-nav" aria-label="Main">
+          <a href="{{ '/' | relative_url }}"{% if page.url == "/" %} class="active" aria-current="page"{% endif %}>Home</a>
+          <a href="{{ '/news/' | relative_url }}"{% if page.url contains "/news" %} class="active" aria-current="page"{% endif %}>News</a>
+          <a href="{{ '/research/' | relative_url }}"{% if page.url contains "/research" %} class="active" aria-current="page"{% endif %}>Research</a>
+          <a href="{{ '/people/' | relative_url }}"{% if page.url contains "/people" %} class="active" aria-current="page"{% endif %}>People</a>
+          <a href="{{ '/photos/' | relative_url }}"{% if page.url contains "/photos" %} class="active" aria-current="page"{% endif %}>Photos</a>
+          <a href="{{ '/publications/' | relative_url }}"{% if page.url contains "/publications" %} class="active" aria-current="page"{% endif %}>Publications</a>
+          <a href="{{ '/tools/' | relative_url }}"{% if page.url contains "/tools" %} class="active" aria-current="page"{% endif %}>Tools</a>
+          <a href="{{ '/join/' | relative_url }}"{% if page.url contains "/join" %} class="active" aria-current="page"{% endif %}>Join</a>
         </nav>
 
         <div class="sidebar-links">
           {% if site.pi.email and site.pi.email != "" %}
-          <a href="mailto:{{ site.pi.email }}" title="Email" class="sidebar-icon">&#9993;</a>
+          <a href="mailto:{{ site.pi.email }}" class="sidebar-icon">
+            <span aria-hidden="true">&#9993;</span><span class="visually-hidden">Email {{ site.pi.name }}</span>
+          </a>
           {% endif %}
           {% if site.pi.github and site.pi.github != "" %}
-          <a href="{{ site.pi.github }}" title="GitHub" class="sidebar-icon" target="_blank" rel="noopener">&#128187;</a>
+          <a href="{{ site.pi.github }}" class="sidebar-icon" target="_blank" rel="noopener">
+            <span aria-hidden="true">&#128187;</span><span class="visually-hidden">GitHub (opens in a new tab)</span>
+          </a>
           {% endif %}
           {% if site.pi.google_scholar and site.pi.google_scholar != "" %}
-          <a href="{{ site.pi.google_scholar }}" title="Google Scholar" class="sidebar-icon" target="_blank" rel="noopener">Scholar</a>
+          <a href="{{ site.pi.google_scholar }}" class="sidebar-icon" target="_blank" rel="noopener">Scholar<span class="visually-hidden"> profile (opens in a new tab)</span></a>
           {% endif %}
           {% if site.pi.orcid and site.pi.orcid != "" %}
-          <a href="https://orcid.org/{{ site.pi.orcid }}" title="ORCID" class="sidebar-icon" target="_blank" rel="noopener">ORCID</a>
+          <a href="https://orcid.org/{{ site.pi.orcid }}" class="sidebar-icon" target="_blank" rel="noopener">ORCID<span class="visually-hidden"> profile (opens in a new tab)</span></a>
           {% endif %}
         </div>
       </aside>
 
-      <main class="content">
+      <main class="content" id="main">
         {{ content }}
       </main>
 

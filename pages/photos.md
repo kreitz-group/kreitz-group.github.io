@@ -13,7 +13,7 @@ description: "Photos from the Kreitz Research Group"
 {% for item in sorted_photos %}
 <figure class="photo-item">
   <img src="{{ '/assets/images/photos/' | append: item.image | relative_url }}"
-       alt="{{ item.caption | default: 'Group photo' }}">
+       alt="{% if item.alt and item.alt != '' %}{{ item.alt }}{% elsif item.caption and item.caption != '' %}{% else %}Kreitz Research Group photo{% endif %}">
   {% if item.caption and item.caption != "" %}
   <figcaption class="photo-caption">
     {{ item.caption }}{% if item.date %} <span class="photo-date">&middot; {{ item.date | date: '%b %Y' }}</span>{% endif %}

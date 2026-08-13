@@ -25,7 +25,7 @@ description: "News and announcements from the Kreitz Research Group"
     <div class="news-body">
       {{ item.body | markdownify }}
       {% if item.link and item.link != "" %}
-      <a href="{{ item.link }}" target="_blank" rel="noopener">&rarr;</a>
+      <a href="{{ item.link }}" target="_blank" rel="noopener"><span class="visually-hidden">Read more about: {{ item.body | markdownify | strip_html | strip_newlines | truncate: 70 }} (opens in a new tab)</span><span aria-hidden="true">&rarr;</span></a>
       {% endif %}
       {% if item.image and item.image != "" %}
       <img class="news-image" src="{{ '/assets/images/news/' | append: item.image | relative_url }}" alt="{{ item.image_alt | default: '' }}">

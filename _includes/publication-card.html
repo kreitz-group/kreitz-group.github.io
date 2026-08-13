@@ -1,7 +1,7 @@
 <div class="pub-entry">
   {% if include.pub.image and include.pub.image != "" %}
   <img src="{{ '/assets/images/publications/' | append: include.pub.image | relative_url }}"
-       alt="{{ include.pub.title }}"
+       alt=""
        class="pub-thumb">
   {% else %}
   <div class="pub-thumb pub-thumb-empty" aria-hidden="true"></div>
@@ -9,9 +9,9 @@
   <div class="pub-body">
     <div class="pub-title">
       {% if include.pub.url %}
-      <a href="{{ include.pub.url }}" target="_blank" rel="noopener">{{ include.pub.title }}</a>
+      <a href="{{ include.pub.url }}" target="_blank" rel="noopener">{{ include.pub.title }}<span class="visually-hidden"> (opens in a new tab)</span></a>
       {% elsif include.pub.doi %}
-      <a href="https://doi.org/{{ include.pub.doi }}" target="_blank" rel="noopener">{{ include.pub.title }}</a>
+      <a href="https://doi.org/{{ include.pub.doi }}" target="_blank" rel="noopener">{{ include.pub.title }}<span class="visually-hidden"> (opens in a new tab)</span></a>
       {% else %}
       {{ include.pub.title }}
       {% endif %}
@@ -26,15 +26,18 @@
     </div>
     {% unless include.hide_abstract %}
     {% if include.pub.abstract and include.pub.abstract != "" %}
-    <div class="pub-abstract">{{ include.pub.abstract }}</div>
+    <details class="pub-abstract">
+      <summary>Abstract<span class="visually-hidden"> of &ldquo;{{ include.pub.title }}&rdquo;</span></summary>
+      <p>{{ include.pub.abstract }}</p>
+    </details>
     {% endif %}
     {% endunless %}
     <div class="pub-links">
       {% if include.pub.doi %}
-      <a href="https://doi.org/{{ include.pub.doi }}" target="_blank" rel="noopener" class="btn">DOI &rarr;</a>
+      <a href="https://doi.org/{{ include.pub.doi }}" target="_blank" rel="noopener" class="btn">DOI<span class="visually-hidden"> for &ldquo;{{ include.pub.title }}&rdquo; (opens in a new tab)</span> <span aria-hidden="true">&rarr;</span></a>
       {% endif %}
       {% if include.pub.arxiv_id %}
-      <a href="https://arxiv.org/abs/{{ include.pub.arxiv_id }}" target="_blank" rel="noopener" class="btn">arXiv &rarr;</a>
+      <a href="https://arxiv.org/abs/{{ include.pub.arxiv_id }}" target="_blank" rel="noopener" class="btn">arXiv<span class="visually-hidden"> preprint of &ldquo;{{ include.pub.title }}&rdquo; (opens in a new tab)</span> <span aria-hidden="true">&rarr;</span></a>
       {% endif %}
     </div>
   </div>
