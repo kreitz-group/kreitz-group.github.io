@@ -90,37 +90,37 @@
 
 # --- Undergraduate Students ---
 
-- id: gabrielle-freund
-  name: "Gabrielle (Gabby) Freund"
-  role: "Undergraduate Researcher"
-  status: current
-  type: undergraduate
-  photo: "gabrielle-freund.jpeg"
-  education: ""
-  info: ""
-  year_joined: 2025
-  current_position: ""
-  email: ""
-  github: ""
-  google_scholar: ""
-  linkedin: ""
-  cv_url: ""
+# - id: gabrielle-freund
+#   name: "Gabrielle (Gabby) Freund"
+#   role: "Undergraduate Researcher"
+#   status: current
+#   type: undergraduate
+#   photo: "gabrielle-freund.jpeg"
+#   education: ""
+#   info: ""
+#   year_joined: 2025
+#   current_position: ""
+#   email: ""
+#   github: ""
+#   google_scholar: ""
+#   linkedin: ""
+#   cv_url: ""
 
-- id: austin-saylor
-  name: "Austin Saylor"
-  role: "Undergraduate Researcher"
-  status: current
-  type: undergraduate
-  photo: "austin-saylor.jpeg"
-  education: ""
-  info: "Austin is a third-year undergraduate majoring in Chemical and Biomolecular Engineering at Georgia Tech. His research focuses on the microkinetic modeling of CO₂ methanation on nickel catalysts. He is currently working with experimental data from a profile reactor to evaluate microkinetic models. In his free time, Austin enjoys watching sports like football and Formula 1, playing video games, and baking."
-  year_joined: 2025
-  current_position: ""
-  email: ""
-  github: ""
-  google_scholar: ""
-  linkedin: ""
-  cv_url: ""
+# - id: austin-saylor
+#   name: "Austin Saylor"
+#   role: "Undergraduate Researcher"
+#   status: current
+#   type: undergraduate
+#   photo: "austin-saylor.jpeg"
+#   education: ""
+#   info: "Austin is a third-year undergraduate majoring in Chemical and Biomolecular Engineering at Georgia Tech. His research focuses on the microkinetic modeling of CO₂ methanation on nickel catalysts. He is currently working with experimental data from a profile reactor to evaluate microkinetic models. In his free time, Austin enjoys watching sports like football and Formula 1, playing video games, and baking."
+#   year_joined: 2025
+#   current_position: ""
+#   email: ""
+#   github: ""
+#   google_scholar: ""
+#   linkedin: ""
+#   cv_url: ""
 
 - id: matthew-abernathy
   name: "Matthew Abernathy"
