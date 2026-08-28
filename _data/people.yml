@@ -106,21 +106,21 @@
 #   linkedin: ""
 #   cv_url: ""
 
-# - id: austin-saylor
-#   name: "Austin Saylor"
-#   role: "Undergraduate Researcher"
-#   status: current
-#   type: undergraduate
-#   photo: "austin-saylor.jpeg"
-#   education: ""
-#   info: "Austin is a third-year undergraduate majoring in Chemical and Biomolecular Engineering at Georgia Tech. His research focuses on the microkinetic modeling of CO₂ methanation on nickel catalysts. He is currently working with experimental data from a profile reactor to evaluate microkinetic models. In his free time, Austin enjoys watching sports like football and Formula 1, playing video games, and baking."
-#   year_joined: 2025
-#   current_position: ""
-#   email: ""
-#   github: ""
-#   google_scholar: ""
-#   linkedin: ""
-#   cv_url: ""
+- id: austin-saylor
+  name: "Austin Saylor"
+  role: "Undergraduate Researcher"
+  status: current
+  type: undergraduate
+  photo: "austin-saylor.jpeg"
+  education: ""
+  info: "Austin is a third-year undergraduate majoring in Chemical and Biomolecular Engineering at Georgia Tech. His research focuses on the microkinetic modeling of CO₂ methanation on nickel catalysts. He is currently working with experimental data from a profile reactor to evaluate microkinetic models. In his free time, Austin enjoys watching sports like football and Formula 1, playing video games, and baking."
+  year_joined: 2026
+  current_position: ""
+  email: ""
+  github: ""
+  google_scholar: ""
+  linkedin: ""
+  cv_url: ""
 
 - id: matthew-abernathy
   name: "Matthew Abernathy"
@@ -130,7 +130,7 @@
   photo: "matthew-abernathy.png"
   education: "B.S. Chemical & Biomolecular Engineering / Applied Languages, Georgia Tech (expected 2026)"
   info: "Matthew is a fourth year double major in Chemical & Biomolecular Engineering and Applied Languages at Georgia Tech from Columbus Georgia. He joined the Kreitz Lab driven by an interest in Chemical Kinetics, Catalysis, and Reactor Design. Currently, he is working on developing a generative AI framework for screening of catalytic materials. In his free time he enjoys cooking, listening to classical music, and playing abstract strategy games, like Go and Chess."
-  year_joined: 2025
+  year_joined: 2026
   current_position: ""
   email: ""
   github: ""
