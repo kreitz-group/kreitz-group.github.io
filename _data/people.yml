@@ -106,6 +106,22 @@
 #   linkedin: ""
 #   cv_url: ""
 
+- id: adrian-lopez
+  name: "Adrian Lopez-Torres"
+  role: "Undergraduate Researcher"
+  status: current
+  type: undergraduate
+  photo: "adrian-lopez.jng"
+  education: ""
+  info: "Originally from Lima, Peru, Adrian is a Chemical & Biomolecular Engineering student at Georgia Tech who joined the lab in Fall 2026, fueled by an interest in molecular modeling and catalysis. He is currently training in machine learning potentials and the Atomic Simulation Environment (ASE), mastering the computational toolkit necessary to spearhead his upcoming research project. Outside the lab, Adrian enjoys swimming, studying maps, or learning about different cultures."
+  year_joined: 2026
+  current_position: ""
+  email: ""
+  github: ""
+  google_scholar: ""
+  linkedin: ""
+  cv_url: ""
+
 - id: austin-saylor
   name: "Austin Saylor"
   role: "Undergraduate Researcher"
