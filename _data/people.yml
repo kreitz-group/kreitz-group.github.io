@@ -79,7 +79,7 @@
   type: graduate
   photo: "conor-obrien.jpg"
   education: "B.S. Chemical Engineering, North Carolina State University (2025)"
-  info: "Conor O’Brien earned his B.S. in Chemical Engineering from North Carolina State University in 2025. During his undergraduate studies, he performed experimental heterogeneous catalysis research on the dry reforming of methane in Dr. Fanxing Li’s group, focusing on the porosity engineering of mesoporous silica supports. At Georgia Tech, his research focuses on a combination of computations and validating experiments in the theory-driven design of metal nanoparticles with enhanced regioselectivity for propylene hydroformylation. In his free time, he enjoys weightlifting, watching sports and movies, playing videogames, playing basketball, hiking, and cooking"
+  info: "Conor O’Brien earned his B.S. in Chemical Engineering from North Carolina State University in 2025. During his undergraduate studies, he performed experimental heterogeneous catalysis research on the dry reforming of methane in Dr. Fanxing Li’s group, focusing on the porosity engineering of mesoporous silica supports. At Georgia Tech, his research focuses on a combination of computations and validating experiments in the theory-driven design of metal nanoparticles with enhanced regioselectivity for propylene hydroformylation. In his free time, he enjoys weightlifting, watching sports and movies, playing videogames, playing basketball, hiking, and cooking."
   year_joined: 2025
   current_position: ""
   email: ""
@@ -87,6 +87,23 @@
   google_scholar: ""
   linkedin: ""
   cv_url: ""
+
+- id: dylan-harrison
+  name: "Dylan J. Harrison"
+  role: "Ph.D. Student"
+  status: current
+  type: graduate
+  photo: "dylan-harrison.jpeg"
+  education: "B.S. Chemical Engineering, Georgia Institute of Technology (2026)"
+  info: "Dylan earned his B.S. in Chemical and Biomolecular Engineering from Georgia Tech in May 2026. In his undergraduate studies, he probed the electrochemical effects of doping conjugated ribbon-like polymers under Dr. Natalie Stingelin. He also had two internship experiences at Kimberly-Clark as both a Product and Process Engineer. In his graduate studies, his work seeks to develop a multiscale kinetic model for polyolefin hydrogenolysis capable of incorporating reactor design and transport limitations. In his free time, you can find him enjoying going to the gym, reading a lot of books, watching movies, and being outdoors."
+  year_joined: 2026
+  current_position: ""
+  email: ""
+  github: ""
+  google_scholar: ""
+  linkedin: ""
+  cv_url: ""
+
 
 # --- Undergraduate Students ---
 
